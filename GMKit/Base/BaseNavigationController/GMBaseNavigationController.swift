@@ -102,7 +102,7 @@ class GMBaseNavigationController: UINavigationController, UINavigationController
         return nil
     }
     
-    // 判断是否是四个根视图控制器之一
+    // 判断是否属于以下的这些控制器
     private func isRootViewController(_ viewController: UIViewController) -> Bool {
         return viewController is GMMineController ||
                viewController is GMLoginController

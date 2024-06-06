@@ -41,6 +41,15 @@
 		ABEA08742C11ACBB007803B0 /* GMTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA08722C11ACBB007803B0 /* GMTabBarController.swift */; };
 		ABEA08752C11ACBB007803B0 /* GMTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA08732C11ACBB007803B0 /* GMTabBar.swift */; };
 		ABEA08772C11AD03007803B0 /* GMDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA08762C11AD03007803B0 /* GMDetailsController.swift */; };
+		ABEA08872C11B96B007803B0 /* GMChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA08792C11B96B007803B0 /* GMChatController.swift */; };
+		ABEA08882C11B96B007803B0 /* GMMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA087A2C11B96B007803B0 /* GMMessageController.swift */; };
+		ABEA08892C11B96B007803B0 /* GMChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA087C2C11B96B007803B0 /* GMChatModel.swift */; };
+		ABEA088A2C11B96B007803B0 /* GMChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA087E2C11B96B007803B0 /* GMChatCell.swift */; };
+		ABEA088B2C11B96B007803B0 /* GMChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABEA087F2C11B96B007803B0 /* GMChatCell.xib */; };
+		ABEA088C2C11B96B007803B0 /* GMChatSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA08802C11B96B007803B0 /* GMChatSendView.swift */; };
+		ABEA088D2C11B96B007803B0 /* GMChatSendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABEA08812C11B96B007803B0 /* GMChatSendView.xib */; };
+		ABEA088E2C11B96B007803B0 /* GMMessageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA08822C11B96B007803B0 /* GMMessageListCell.swift */; };
+		ABEA088F2C11B96B007803B0 /* GMMessageListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABEA08832C11B96B007803B0 /* GMMessageListCell.xib */; };
 		E1DD1BC7CC1398032FC75D22 /* Pods_GMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C47D880714DCF1C44EDD97AF /* Pods_GMKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +93,15 @@
 		ABEA08732C11ACBB007803B0 /* GMTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMTabBar.swift; sourceTree = "<group>"; };
 		ABEA08762C11AD03007803B0 /* GMDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMDetailsController.swift; sourceTree = "<group>"; };
 		ABEA08782C11B06E007803B0 /* GMkit-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GMkit-Header.h"; sourceTree = "<group>"; };
+		ABEA08792C11B96B007803B0 /* GMChatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMChatController.swift; sourceTree = "<group>"; };
+		ABEA087A2C11B96B007803B0 /* GMMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMMessageController.swift; sourceTree = "<group>"; };
+		ABEA087C2C11B96B007803B0 /* GMChatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMChatModel.swift; sourceTree = "<group>"; };
+		ABEA087E2C11B96B007803B0 /* GMChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMChatCell.swift; sourceTree = "<group>"; };
+		ABEA087F2C11B96B007803B0 /* GMChatCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMChatCell.xib; sourceTree = "<group>"; };
+		ABEA08802C11B96B007803B0 /* GMChatSendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMChatSendView.swift; sourceTree = "<group>"; };
+		ABEA08812C11B96B007803B0 /* GMChatSendView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMChatSendView.xib; sourceTree = "<group>"; };
+		ABEA08822C11B96B007803B0 /* GMMessageListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMMessageListCell.swift; sourceTree = "<group>"; };
+		ABEA08832C11B96B007803B0 /* GMMessageListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMMessageListCell.xib; sourceTree = "<group>"; };
 		C47D880714DCF1C44EDD97AF /* Pods_GMKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GMKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -381,6 +399,7 @@
 		ABEA08192C119E4F007803B0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				ABEA08862C11B96B007803B0 /* Message */,
 				ABEA08042C119E4F007803B0 /* Details */,
 				ABEA08092C119E4F007803B0 /* Home */,
 				ABEA080E2C119E4F007803B0 /* Login */,
@@ -513,6 +532,54 @@
 			path = BaseViewController;
 			sourceTree = "<group>";
 		};
+		ABEA087B2C11B96B007803B0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ABEA08792C11B96B007803B0 /* GMChatController.swift */,
+				ABEA087A2C11B96B007803B0 /* GMMessageController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		ABEA087D2C11B96B007803B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ABEA087C2C11B96B007803B0 /* GMChatModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ABEA08842C11B96B007803B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ABEA087E2C11B96B007803B0 /* GMChatCell.swift */,
+				ABEA087F2C11B96B007803B0 /* GMChatCell.xib */,
+				ABEA08802C11B96B007803B0 /* GMChatSendView.swift */,
+				ABEA08812C11B96B007803B0 /* GMChatSendView.xib */,
+				ABEA08822C11B96B007803B0 /* GMMessageListCell.swift */,
+				ABEA08832C11B96B007803B0 /* GMMessageListCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ABEA08852C11B96B007803B0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ABEA08862C11B96B007803B0 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				ABEA087B2C11B96B007803B0 /* Controller */,
+				ABEA087D2C11B96B007803B0 /* Model */,
+				ABEA08842C11B96B007803B0 /* View */,
+				ABEA08852C11B96B007803B0 /* ViewModel */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -573,7 +640,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABEA088D2C11B96B007803B0 /* GMChatSendView.xib in Resources */,
 				ABEA07F42C119DE5007803B0 /* Assets.xcassets in Resources */,
+				ABEA088B2C11B96B007803B0 /* GMChatCell.xib in Resources */,
+				ABEA088F2C11B96B007803B0 /* GMMessageListCell.xib in Resources */,
 				ABEA07F72C119DE5007803B0 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -630,6 +700,7 @@
 				ABEA084E2C11AB40007803B0 /* GMReachability.swift in Sources */,
 				ABEA084C2C11AB40007803B0 /* GMHttpUrl.swift in Sources */,
 				ABEA08772C11AD03007803B0 /* GMDetailsController.swift in Sources */,
+				ABEA08882C11B96B007803B0 /* GMMessageController.swift in Sources */,
 				ABEA085C2C11AB46007803B0 /* GMBaseWebViewController.swift in Sources */,
 				ABEA086F2C11AC7E007803B0 /* GMMineController.swift in Sources */,
 				ABEA082E2C11AB1B007803B0 /* GMButtonExt.swift in Sources */,
@@ -641,6 +712,8 @@
 				ABEA082D2C11AB1B007803B0 /* GMTextFieldExt.swift in Sources */,
 				ABEA08672C11AB57007803B0 /* GMGlobal.swift in Sources */,
 				ABEA084F2C11AB40007803B0 /* GMUserController.swift in Sources */,
+				ABEA088E2C11B96B007803B0 /* GMMessageListCell.swift in Sources */,
+				ABEA088A2C11B96B007803B0 /* GMChatCell.swift in Sources */,
 				ABEA086D2C11AC6B007803B0 /* GMLoginController.swift in Sources */,
 				ABEA085F2C11AB46007803B0 /* GMBaseLocalHTMLController.swift in Sources */,
 				ABEA08492C11AB40007803B0 /* GMAPIManager.swift in Sources */,
@@ -649,11 +722,14 @@
 				ABEA086B2C11AC33007803B0 /* GMHomeController.swift in Sources */,
 				ABEA08332C11AB1B007803B0 /* GMTextViewExt.swift in Sources */,
 				ABEA085D2C11AB46007803B0 /* GMBaseNavigationController.swift in Sources */,
+				ABEA08892C11B96B007803B0 /* GMChatModel.swift in Sources */,
 				ABEA08372C11AB1B007803B0 /* GMCountDownExt.swift in Sources */,
 				ABEA08382C11AB1B007803B0 /* GMNavigationExt.swift in Sources */,
 				ABEA08742C11ACBB007803B0 /* GMTabBarController.swift in Sources */,
 				ABEA082F2C11AB1B007803B0 /* GMControlExt.swift in Sources */,
 				ABEA08502C11AB40007803B0 /* GMAlertController.swift in Sources */,
+				ABEA08872C11B96B007803B0 /* GMChatController.swift in Sources */,
+				ABEA088C2C11B96B007803B0 /* GMChatSendView.swift in Sources */,
 				ABEA085E2C11AB46007803B0 /* GMBaseTableView.swift in Sources */,
 				ABEA07EB2C119DE4007803B0 /* AppDelegate.swift in Sources */,
 				ABEA08342C11AB1B007803B0 /* GMStringExt.swift in Sources */,

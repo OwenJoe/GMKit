@@ -34,12 +34,14 @@ class GMTabBarController: UITabBarController , UITabBarControllerDelegate{
     //加载控制器
     func setupViewControllers() -> [UINavigationController] {
         let home = GMBaseNavigationController(rootViewController: GMHomeController())
-        home.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "home_normal"), selectedImage: UIImage(named: "home_highlight")?.withRenderingMode(.alwaysOriginal))
+        home.tabBarItem = UITabBarItem(title: "首页", image: UIImage(named: "home_normal"), selectedImage: UIImage(named: "home_highlight")?.withRenderingMode(.alwaysOriginal))
         let details = GMBaseNavigationController(rootViewController: GMDetailsController())
-        details.tabBarItem = UITabBarItem(title: "hotspot", image: UIImage(named: "hot_normal"), selectedImage: UIImage(named: "hot_highlight")?.withRenderingMode(.alwaysOriginal))
+        details.tabBarItem = UITabBarItem(title: "方案", image: UIImage(named: "hot_normal"), selectedImage: UIImage(named: "hot_highlight")?.withRenderingMode(.alwaysOriginal))
+        let message = GMBaseNavigationController(rootViewController: GMMessageController())
+        message.tabBarItem = UITabBarItem(title: "聊天", image: UIImage(named: "mycity_normal"), selectedImage: UIImage(named: "mycity_highlight")?.withRenderingMode(.alwaysOriginal))
         let mine = GMBaseNavigationController(rootViewController: GMMineController())
-        mine.tabBarItem = UITabBarItem(title: "Setting", image: UIImage(named: "message_normal"), selectedImage: UIImage(named: "message_highlight")?.withRenderingMode(.alwaysOriginal))
-        let viewControllers = [home, details, mine]
+        mine.tabBarItem = UITabBarItem(title: "设置", image: UIImage(named: "message_normal"), selectedImage: UIImage(named: "message_highlight")?.withRenderingMode(.alwaysOriginal))
+        let viewControllers = [home, details, message, mine]
         return viewControllers
     }
   
@@ -60,7 +62,6 @@ class GMTabBarController: UITabBarController , UITabBarControllerDelegate{
                 print("当前选中的视图控制器没有导航控制器")
             }
         }
-//        print("点击了第\(tabBarController.selectedIndex)个控制器")
     }
 }
 
