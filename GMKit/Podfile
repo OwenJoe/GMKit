@@ -1,0 +1,27 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'GMKit' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for GMKit
+  pod 'Alamofire'  #用于网络请求,当然可以用Moya,但使用起来太过抽象
+  pod 'MJRefresh'  #上下拉加载
+  pod 'Kingfisher' #用于图片加载
+  pod 'JXSegmentedView' #菜单控制器,目前来说比较好用的
+  pod 'CodableWrapper', '0.3.3' #为了处理自带Codable为空参数处理,但是目前没有找到更加合适的,当然也可以使用废弃的HandyJson
+  pod 'EmptyDataSet-Swift', '~> 5.0.0' #列表空占位图
+  pod 'SVProgressHUD' #菊花
+  pod 'HandyJSON' #转模型使用
+  pod 'KeychainAccess' #秘钥存储使用
+  pod 'SnapKit'  #Swift版的masonry
+  pod 'IQKeyboardManagerSwift' #键盘处理
+  pod 'ReachabilitySwift' #网络监听框架使用
+  pod 'CocoaDebug', :configurations => ['Debug']  #‘Debug’表示只在debug模式下显示。上线之后就不会显示
+  
+  
+  #以下是看项目情况需要
+  #pod 'NXNavigationExtension'   #使用上如果跟第三方控制器有冲突,着实不好处理
+
+end
