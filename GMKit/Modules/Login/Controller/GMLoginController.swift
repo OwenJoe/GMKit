@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  GMLoginController.swift
 //  GMKit
 //
 //  Created by hule on 2024/6/6.
@@ -7,13 +7,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class GMLoginController: GMBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        self.title = "我就是登录页"
     }
+    
 
 
 }
-

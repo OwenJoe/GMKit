@@ -11,26 +11,54 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
-
+    var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        setupTabBar()
+        //调用任意接口,国行版弹起网络数据弹窗
+        loadURL(urlString: "https://www.baidu.com")
         return true
     }
-
-    // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+    
+    //加载tabBar
+    func setupTabBar()  {
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let mainTabBarVc = GMTabBarController()
+        window?.rootViewController = mainTabBarVc
+        window?.makeKeyAndVisible()
+        IQKeyboardManager.shared.enable =  true
     }
 
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    //是否追踪隐私弹窗
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        //处理IDFA
+        GMUserController.shared.getIDFA()
     }
+    
+    
 
-
+    //唤醒网络弹窗,判断是否首次弹窗
+    func loadURL(urlString: String) {
+        if let url = URL(string: urlString) {
+            let session = URLSession.shared
+            let task = session.dataTask(with: url) { (data, response, error) in
+                if let error = error {
+                    print("Error: \(error.localizedDescription)")
+                    return
+                }
+                
+                if let httpResponse = response as? HTTPURLResponse {
+                    if httpResponse.statusCode == 200 {
+                        // 网络请求成功，可以处理返回的数据
+                       
+                    } else {
+                        print("HTTP Error: \(httpResponse.statusCode)")
+                    }
+                }
+            }
+            task.resume()
+        } else {
+            print("Invalid URL")
+        }
+    }
 }
 
