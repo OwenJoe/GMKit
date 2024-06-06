@@ -18,8 +18,6 @@ class GMBaseViewController: UIViewController , UINavigationControllerDelegate, U
     }
     
 
-
-
     // MARK: - UINavigationControllerDelegate
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         // 判断如果是需要隐藏导航控制器的类，则隐藏

@@ -7,14 +7,16 @@
 
 import UIKit
 
-class GMLoginController: GMBaseViewController {
+class GMLoginController: GMBaseViewController,UITextFieldDelegate {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = "我就是登录页"
+        
     }
     
-
+    
 
 }

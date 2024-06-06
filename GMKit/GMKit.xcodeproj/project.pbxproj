@@ -50,6 +50,9 @@
 		ABEA088D2C11B96B007803B0 /* GMChatSendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABEA08812C11B96B007803B0 /* GMChatSendView.xib */; };
 		ABEA088E2C11B96B007803B0 /* GMMessageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA08822C11B96B007803B0 /* GMMessageListCell.swift */; };
 		ABEA088F2C11B96B007803B0 /* GMMessageListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABEA08832C11B96B007803B0 /* GMMessageListCell.xib */; };
+		ABEA08922C11BCB4007803B0 /* GMHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABEA08912C11BCB4007803B0 /* GMHomeCell.xib */; };
+		ABEA08932C11BCB4007803B0 /* GMHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA08902C11BCB4007803B0 /* GMHomeCell.swift */; };
+		ABEA08952C11BEB3007803B0 /* GMHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA08942C11BEB3007803B0 /* GMHomeModel.swift */; };
 		E1DD1BC7CC1398032FC75D22 /* Pods_GMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C47D880714DCF1C44EDD97AF /* Pods_GMKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +105,9 @@
 		ABEA08812C11B96B007803B0 /* GMChatSendView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMChatSendView.xib; sourceTree = "<group>"; };
 		ABEA08822C11B96B007803B0 /* GMMessageListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMMessageListCell.swift; sourceTree = "<group>"; };
 		ABEA08832C11B96B007803B0 /* GMMessageListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMMessageListCell.xib; sourceTree = "<group>"; };
+		ABEA08902C11BCB4007803B0 /* GMHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMHomeCell.swift; sourceTree = "<group>"; };
+		ABEA08912C11BCB4007803B0 /* GMHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GMHomeCell.xib; sourceTree = "<group>"; };
+		ABEA08942C11BEB3007803B0 /* GMHomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMHomeModel.swift; sourceTree = "<group>"; };
 		C47D880714DCF1C44EDD97AF /* Pods_GMKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GMKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -246,6 +252,7 @@
 		ABEA08062C119E4F007803B0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				ABEA08942C11BEB3007803B0 /* GMHomeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -253,6 +260,8 @@
 		ABEA08072C119E4F007803B0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ABEA08902C11BCB4007803B0 /* GMHomeCell.swift */,
+				ABEA08912C11BCB4007803B0 /* GMHomeCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -642,6 +651,7 @@
 			files = (
 				ABEA088D2C11B96B007803B0 /* GMChatSendView.xib in Resources */,
 				ABEA07F42C119DE5007803B0 /* Assets.xcassets in Resources */,
+				ABEA08922C11BCB4007803B0 /* GMHomeCell.xib in Resources */,
 				ABEA088B2C11B96B007803B0 /* GMChatCell.xib in Resources */,
 				ABEA088F2C11B96B007803B0 /* GMMessageListCell.xib in Resources */,
 				ABEA07F72C119DE5007803B0 /* Base in Resources */,
@@ -715,6 +725,7 @@
 				ABEA088E2C11B96B007803B0 /* GMMessageListCell.swift in Sources */,
 				ABEA088A2C11B96B007803B0 /* GMChatCell.swift in Sources */,
 				ABEA086D2C11AC6B007803B0 /* GMLoginController.swift in Sources */,
+				ABEA08952C11BEB3007803B0 /* GMHomeModel.swift in Sources */,
 				ABEA085F2C11AB46007803B0 /* GMBaseLocalHTMLController.swift in Sources */,
 				ABEA08492C11AB40007803B0 /* GMAPIManager.swift in Sources */,
 				ABEA08602C11AB46007803B0 /* GMBaseViewController.swift in Sources */,
@@ -725,6 +736,7 @@
 				ABEA08892C11B96B007803B0 /* GMChatModel.swift in Sources */,
 				ABEA08372C11AB1B007803B0 /* GMCountDownExt.swift in Sources */,
 				ABEA08382C11AB1B007803B0 /* GMNavigationExt.swift in Sources */,
+				ABEA08932C11BCB4007803B0 /* GMHomeCell.swift in Sources */,
 				ABEA08742C11ACBB007803B0 /* GMTabBarController.swift in Sources */,
 				ABEA082F2C11AB1B007803B0 /* GMControlExt.swift in Sources */,
 				ABEA08502C11AB40007803B0 /* GMAlertController.swift in Sources */,
