@@ -55,19 +55,19 @@ class GMTabBarController: UITabBarController , UITabBarControllerDelegate{
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         
-        let status = GMStorageManager.shared.getData(forkey: LoginSucessKey) as? Int
-        if status != 1 {
-            // 获取当前选中的视图控制器的导航控制器
-            if tabBarController.selectedViewController is UINavigationController &&  tabBarController.selectedIndex != 0 {
-                // 创建并推送登录视图控制器
-                let loginVC = GMLoginController()
-                let nav = tabBarController.selectedViewController as? GMBaseNavigationController
-                nav?.pushViewController(loginVC, animated: false)
-            } else {
-                // 如果没有导航控制器，你可能需要采取其他措施，比如直接设置根视图控制器
-                print("当前选中的视图控制器没有导航控制器")
-            }
-        }
+//        let status = GMStorageManager.shared.getData(forkey: LoginSucessKey) as? Int
+//        if status != 1 {
+//            // 获取当前选中的视图控制器的导航控制器
+//            if tabBarController.selectedViewController is UINavigationController &&  tabBarController.selectedIndex != 0 {
+//                // 创建并推送登录视图控制器
+//                let loginVC = GMLoginController()
+//                let nav = tabBarController.selectedViewController as? GMBaseNavigationController
+//                nav?.pushViewController(loginVC, animated: false)
+//            } else {
+//                // 如果没有导航控制器，你可能需要采取其他措施，比如直接设置根视图控制器
+//                print("当前选中的视图控制器没有导航控制器")
+//            }
+//        }
     }
 }
 
