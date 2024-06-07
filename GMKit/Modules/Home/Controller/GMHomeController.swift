@@ -92,6 +92,7 @@ class GMHomeController: GMBaseViewController,UITableViewDelegate, UITableViewDat
             GMHomeModel(content: "常规正则判断", type: .regexJudgement),
             GMHomeModel(content: "AdVance人脸识别", type: .advanceFaceRecognition),
             GMHomeModel(content: "仿微信右上角弹出菜单", type: .weChatMenu)
+            
         ]
         tableView.reloadData()
     }
@@ -118,5 +119,21 @@ class GMHomeController: GMBaseViewController,UITableViewDelegate, UITableViewDat
         cell?.rowStr = String(indexPath.section)
         cell?.model = listArr?[indexPath.section]
         return cell ?? GMHomeCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let webSocket = GMWebSocketManager.shared
+        webSocket.connect()
+        webSocket.writeText(message: "这是一条测试文字信息")
+        
+//        let model = listArr?[indexPath.row] as? GMHomeModel
+//        if model?.type == .socketUsage {
+//            
+//            let webSocket = GMWebSocketManager.shared
+//            webSocket.connect()
+//            
+//        }
     }
 }

@@ -53,6 +53,7 @@
 		ABEA08932C11BCB4007803B0 /* GMHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA08902C11BCB4007803B0 /* GMHomeCell.swift */; };
 		ABEA08952C11BEB3007803B0 /* GMHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA08942C11BEB3007803B0 /* GMHomeModel.swift */; };
 		ABEA08972C12FCCD007803B0 /* GMHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA08962C12FCCD007803B0 /* GMHomeController.swift */; };
+		ABEA089E2C1306C4007803B0 /* GMWebSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA089D2C1306C4007803B0 /* GMWebSocketManager.swift */; };
 		E1DD1BC7CC1398032FC75D22 /* Pods_GMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C47D880714DCF1C44EDD97AF /* Pods_GMKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +109,7 @@
 		ABEA08912C11BCB4007803B0 /* GMHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GMHomeCell.xib; sourceTree = "<group>"; };
 		ABEA08942C11BEB3007803B0 /* GMHomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMHomeModel.swift; sourceTree = "<group>"; };
 		ABEA08962C12FCCD007803B0 /* GMHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMHomeController.swift; sourceTree = "<group>"; };
+		ABEA089D2C1306C4007803B0 /* GMWebSocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMWebSocketManager.swift; sourceTree = "<group>"; };
 		C47D880714DCF1C44EDD97AF /* Pods_GMKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GMKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -408,6 +410,7 @@
 		ABEA08192C119E4F007803B0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				ABEA089C2C130698007803B0 /* Starscream */,
 				ABEA08862C11B96B007803B0 /* Message */,
 				ABEA08042C119E4F007803B0 /* Details */,
 				ABEA08092C119E4F007803B0 /* Home */,
@@ -589,6 +592,46 @@
 			path = Message;
 			sourceTree = "<group>";
 		};
+		ABEA08982C130698007803B0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ABEA089D2C1306C4007803B0 /* GMWebSocketManager.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		ABEA08992C130698007803B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ABEA089A2C130698007803B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ABEA089B2C130698007803B0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ABEA089C2C130698007803B0 /* Starscream */ = {
+			isa = PBXGroup;
+			children = (
+				ABEA08982C130698007803B0 /* Controller */,
+				ABEA08992C130698007803B0 /* Model */,
+				ABEA089A2C130698007803B0 /* View */,
+				ABEA089B2C130698007803B0 /* ViewModel */,
+			);
+			path = Starscream;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -718,6 +761,7 @@
 				ABEA08302C11AB1B007803B0 /* GMViewControllerExt.swift in Sources */,
 				ABEA08362C11AB1B007803B0 /* GMViewExt.swift in Sources */,
 				ABEA08322C11AB1B007803B0 /* GMImageExt.swift in Sources */,
+				ABEA089E2C1306C4007803B0 /* GMWebSocketManager.swift in Sources */,
 				ABEA08482C11AB40007803B0 /* GMStorageManager.swift in Sources */,
 				ABEA082D2C11AB1B007803B0 /* GMTextFieldExt.swift in Sources */,
 				ABEA08672C11AB57007803B0 /* GMGlobal.swift in Sources */,

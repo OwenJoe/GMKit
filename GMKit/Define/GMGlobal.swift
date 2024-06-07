@@ -20,6 +20,7 @@ import Foundation
 @_exported import SnapKit
 @_exported import IQKeyboardManagerSwift
 @_exported import EmptyDataSet_Swift
+@_exported import Starscream
 
 /*****************************相应的key**********************************************/
 
