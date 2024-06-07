@@ -9,7 +9,7 @@ import UIKit
 import WebKit
 class GMBaseLocalHTMLController: GMBaseViewController , WKNavigationDelegate {
     
-    var navTitle: String?
+
     var webView: WKWebView!
     var htmlPath: String?
     override func viewDidLoad() {

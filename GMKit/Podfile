@@ -19,7 +19,7 @@ target 'GMKit' do
   pod 'IQKeyboardManagerSwift' #键盘处理
   pod 'ReachabilitySwift' #网络监听框架使用
   pod 'CocoaDebug', :configurations => ['Debug']  #‘Debug’表示只在debug模式下显示。上线之后就不会显示
-  
+  pod 'EachNavigationBar' #更加优雅使用导航栏
   
   #以下是看项目情况需要
   #pod 'NXNavigationExtension'   #使用上如果跟第三方控制器有冲突,着实不好处理

@@ -41,10 +41,16 @@ class GMTabBarController: UITabBarController , UITabBarControllerDelegate{
         message.tabBarItem = UITabBarItem(title: "聊天", image: UIImage(named: "mycity_normal"), selectedImage: UIImage(named: "mycity_highlight")?.withRenderingMode(.alwaysOriginal))
         let mine = GMBaseNavigationController(rootViewController: GMMineController())
         mine.tabBarItem = UITabBarItem(title: "设置", image: UIImage(named: "message_normal"), selectedImage: UIImage(named: "message_highlight")?.withRenderingMode(.alwaysOriginal))
-        let viewControllers = [home, details, message, mine]
+        let viewControllers = [setupNav(vc: home), setupNav(vc: message), setupNav(vc: mine)]
         return viewControllers
     }
   
+    //继承第三方框架后,提前赋值下导航栏属性否则会有问题
+     func setupNav(vc: UINavigationController) -> UINavigationController {
+         vc.navigation.configuration.isEnabled = true
+         return vc
+     }
+
 
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
