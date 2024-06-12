@@ -126,7 +126,22 @@ class GMHomeController: GMBaseViewController,UITableViewDelegate, UITableViewDat
         
         let webSocket = GMWebSocketManager.shared
         webSocket.connect()
-        webSocket.writeText(message: "这是一条测试文字信息")
+
+        //可以用http://www.websocket-test.com/ 进行在线测试,个别网站测试有问题
+        //现有项目是只有发送对应的格式到后端,后端才会进行消息转发,客户端才能收到消息
+        let jsonObject: [String: Any] = ["room_id": "123456", "roomUid": "123456", "uid": 0, "room_type": 0]
+
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: jsonObject, options: [])
+            if let jsonString = String(data: jsonData, encoding: .utf8) {
+                print("JSON 字符串: \(jsonString)")
+                webSocket.writeText(message: jsonString)
+            }
+        } catch {
+            print("转换 JSON 到字符串时发生错误: \(error)")
+        }
+
+     
         
 //        let model = listArr?[indexPath.row] as? GMHomeModel
 //        if model?.type == .socketUsage {

@@ -9,6 +9,7 @@ import UIKit
 
 class GMWebSocketManager: WebSocketDelegate  {
     
+    
 
     static let shared = GMWebSocketManager()
     private var socket: WebSocket?
@@ -18,7 +19,8 @@ class GMWebSocketManager: WebSocketDelegate  {
     private var pingTimer: Timer?
     
     private init() {
-        let url = URL(string: "ws://47.119.173.119:3006/")! // 设置为你的服务器地址
+        // "ws://47.119.173.119:3006"//47.112.134.182:3006  120.78.176.89:3006
+        let url = URL(string: "ws://47.119.173.119:3006")! // 设置为你的服务器地址 wss://im.gimmelive.net
         var request = URLRequest(url: url)
         request.timeoutInterval = 5
         socket = WebSocket(request: request)
@@ -78,7 +80,7 @@ class GMWebSocketManager: WebSocketDelegate  {
             
         case .disconnected(let reason, let code):
             isConnected = false
-            print("WebSocket 已断开连接: \(reason) 带有代码: \(code)")
+            print("WebSocket 已断开连接: \(reason) 返回code值: \(code)")
             pingTimer?.invalidate()
             attemptReconnect()
             
