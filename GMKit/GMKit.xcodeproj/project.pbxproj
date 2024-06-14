@@ -58,10 +58,14 @@
 		ABF0A92A2C1AD1DC0088A8DD /* GMScrollChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF0A9282C1AD1DC0088A8DD /* GMScrollChatCell.swift */; };
 		ABF0A92B2C1AD1DC0088A8DD /* GMScrollChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABF0A9292C1AD1DC0088A8DD /* GMScrollChatCell.xib */; };
 		ABF0A92D2C1AD33D0088A8DD /* GMScrollChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF0A92C2C1AD33D0088A8DD /* GMScrollChatModel.swift */; };
-		ABF0A92F2C1AF7960088A8DD /* AttributedTextGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF0A92E2C1AF7960088A8DD /* AttributedTextGenerator.swift */; };
 		ABF0A95F2C1C2D0C0088A8DD /* GMAgreementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF0A95E2C1C2D0C0088A8DD /* GMAgreementController.swift */; };
 		ABF0A9632C1C2D6A0088A8DD /* select.png in Resources */ = {isa = PBXBuildFile; fileRef = ABF0A9612C1C2D6A0088A8DD /* select.png */; };
 		ABF0A9642C1C2D6A0088A8DD /* unselect.png in Resources */ = {isa = PBXBuildFile; fileRef = ABF0A9622C1C2D6A0088A8DD /* unselect.png */; };
+		ABF0A96A2C1C34050088A8DD /* 会员等级.png in Resources */ = {isa = PBXBuildFile; fileRef = ABF0A9662C1C34050088A8DD /* 会员等级.png */; };
+		ABF0A96B2C1C34050088A8DD /* 皇冠.png in Resources */ = {isa = PBXBuildFile; fileRef = ABF0A9672C1C34050088A8DD /* 皇冠.png */; };
+		ABF0A96C2C1C34050088A8DD /* tipvip.png in Resources */ = {isa = PBXBuildFile; fileRef = ABF0A9682C1C34050088A8DD /* tipvip.png */; };
+		ABF0A96D2C1C34050088A8DD /* 高兴表情.png in Resources */ = {isa = PBXBuildFile; fileRef = ABF0A9692C1C34050088A8DD /* 高兴表情.png */; };
+		ABF0A96F2C1C45840088A8DD /* GMChatListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF0A96E2C1C45840088A8DD /* GMChatListTableView.swift */; };
 		E1DD1BC7CC1398032FC75D22 /* Pods_GMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C47D880714DCF1C44EDD97AF /* Pods_GMKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -122,10 +126,14 @@
 		ABF0A9282C1AD1DC0088A8DD /* GMScrollChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMScrollChatCell.swift; sourceTree = "<group>"; };
 		ABF0A9292C1AD1DC0088A8DD /* GMScrollChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GMScrollChatCell.xib; sourceTree = "<group>"; };
 		ABF0A92C2C1AD33D0088A8DD /* GMScrollChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMScrollChatModel.swift; sourceTree = "<group>"; };
-		ABF0A92E2C1AF7960088A8DD /* AttributedTextGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedTextGenerator.swift; sourceTree = "<group>"; };
 		ABF0A95E2C1C2D0C0088A8DD /* GMAgreementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMAgreementController.swift; sourceTree = "<group>"; };
 		ABF0A9612C1C2D6A0088A8DD /* select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = select.png; sourceTree = "<group>"; };
 		ABF0A9622C1C2D6A0088A8DD /* unselect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unselect.png; sourceTree = "<group>"; };
+		ABF0A9662C1C34050088A8DD /* 会员等级.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "会员等级.png"; sourceTree = "<group>"; };
+		ABF0A9672C1C34050088A8DD /* 皇冠.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "皇冠.png"; sourceTree = "<group>"; };
+		ABF0A9682C1C34050088A8DD /* tipvip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tipvip.png; sourceTree = "<group>"; };
+		ABF0A9692C1C34050088A8DD /* 高兴表情.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "高兴表情.png"; sourceTree = "<group>"; };
+		ABF0A96E2C1C45840088A8DD /* GMChatListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMChatListTableView.swift; sourceTree = "<group>"; };
 		C47D880714DCF1C44EDD97AF /* Pods_GMKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GMKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -653,11 +661,12 @@
 		ABF0A9252C1AC8320088A8DD /* 直播间聊天列表 */ = {
 			isa = PBXGroup;
 			children = (
+				ABF0A9652C1C33690088A8DD /* Resource */,
 				ABF0A9262C1AD1250088A8DD /* GMScrollChatController.swift */,
 				ABF0A9282C1AD1DC0088A8DD /* GMScrollChatCell.swift */,
 				ABF0A9292C1AD1DC0088A8DD /* GMScrollChatCell.xib */,
 				ABF0A92C2C1AD33D0088A8DD /* GMScrollChatModel.swift */,
-				ABF0A92E2C1AF7960088A8DD /* AttributedTextGenerator.swift */,
+				ABF0A96E2C1C45840088A8DD /* GMChatListTableView.swift */,
 			);
 			path = "直播间聊天列表";
 			sourceTree = "<group>";
@@ -676,6 +685,17 @@
 			children = (
 				ABF0A9612C1C2D6A0088A8DD /* select.png */,
 				ABF0A9622C1C2D6A0088A8DD /* unselect.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		ABF0A9652C1C33690088A8DD /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				ABF0A9692C1C34050088A8DD /* 高兴表情.png */,
+				ABF0A9672C1C34050088A8DD /* 皇冠.png */,
+				ABF0A9662C1C34050088A8DD /* 会员等级.png */,
+				ABF0A9682C1C34050088A8DD /* tipvip.png */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -745,8 +765,12 @@
 				ABF0A9642C1C2D6A0088A8DD /* unselect.png in Resources */,
 				ABF0A92B2C1AD1DC0088A8DD /* GMScrollChatCell.xib in Resources */,
 				ABEA08922C11BCB4007803B0 /* GMHomeCell.xib in Resources */,
+				ABF0A96C2C1C34050088A8DD /* tipvip.png in Resources */,
 				ABEA088B2C11B96B007803B0 /* GMChatCell.xib in Resources */,
 				ABF0A9632C1C2D6A0088A8DD /* select.png in Resources */,
+				ABF0A96D2C1C34050088A8DD /* 高兴表情.png in Resources */,
+				ABF0A96B2C1C34050088A8DD /* 皇冠.png in Resources */,
+				ABF0A96A2C1C34050088A8DD /* 会员等级.png in Resources */,
 				ABEA088F2C11B96B007803B0 /* GMMessageListCell.xib in Resources */,
 				ABEA07F72C119DE5007803B0 /* Base in Resources */,
 			);
@@ -812,6 +836,7 @@
 				ABEA08512C11AB40007803B0 /* GMProgressHUD.swift in Sources */,
 				ABEA08302C11AB1B007803B0 /* GMViewControllerExt.swift in Sources */,
 				ABEA08362C11AB1B007803B0 /* GMViewExt.swift in Sources */,
+				ABF0A96F2C1C45840088A8DD /* GMChatListTableView.swift in Sources */,
 				ABEA08322C11AB1B007803B0 /* GMImageExt.swift in Sources */,
 				ABEA089E2C1306C4007803B0 /* GMWebSocketManager.swift in Sources */,
 				ABF0A92A2C1AD1DC0088A8DD /* GMScrollChatCell.swift in Sources */,
@@ -823,7 +848,6 @@
 				ABEA088A2C11B96B007803B0 /* GMChatCell.swift in Sources */,
 				ABEA086D2C11AC6B007803B0 /* GMLoginController.swift in Sources */,
 				ABEA08972C12FCCD007803B0 /* GMHomeController.swift in Sources */,
-				ABF0A92F2C1AF7960088A8DD /* AttributedTextGenerator.swift in Sources */,
 				ABEA08952C11BEB3007803B0 /* GMHomeModel.swift in Sources */,
 				ABEA085F2C11AB46007803B0 /* GMBaseLocalHTMLController.swift in Sources */,
 				ABEA08492C11AB40007803B0 /* GMAPIManager.swift in Sources */,

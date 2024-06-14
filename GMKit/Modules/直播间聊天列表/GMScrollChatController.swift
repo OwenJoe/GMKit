@@ -10,14 +10,15 @@ import UIKit
 class GMScrollChatController: GMBaseViewController {
     var autoScrollTimer: Timer?
     var listArr = [Any]()
-    lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: CGRectMake(100, 150, 250, ScreenHeight * 0.75),style: .grouped)
+    lazy var tableView: GMChatListTableView = {
+        let tableView = GMChatListTableView(frame: CGRectMake(100, 150, 250, ScreenHeight * 0.75),style: .grouped)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: GMScrollChatCellKey, bundle: nil), forCellReuseIdentifier: GMScrollChatCellKey)
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorStyle = .none
+        tableView.backgroundColor = .clear
         return tableView
     }()
     
@@ -26,6 +27,7 @@ class GMScrollChatController: GMBaseViewController {
         navTitle = "直播间滚动聊天列表"
         view.backgroundColor = .white
         view.addSubview(tableView)
+//        addGradientToTableView()
         // 开始自动滚动
 //        startAutoScroll()
     }
@@ -123,4 +125,35 @@ extension GMScrollChatController {
            // 如果存在减速，减速结束后重新启动自动滚动
            startAutoScroll()
        }
+    
+
+}
+
+//聊天顶部尾部模糊化
+extension GMScrollChatController{
+    
+    func addGradientToTableView() {
+        guard let tableViewSuperview = tableView.superview else { return }
+
+        // 创建渐变层
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [
+            UIColor(white: 0, alpha: 0.05).cgColor,
+            UIColor(white: 0, alpha: 1.0).cgColor
+        ]
+        gradientLayer.locations = [0.0, 0.4] // 设置颜色的范围
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0) // 设置颜色渐变的起点
+        gradientLayer.endPoint = CGPoint(x: 0, y: 0.30) // 设置颜色渐变的终点，形成渐变方向
+        gradientLayer.frame = CGRect(x: tableView.frame.origin.x, y: tableView.frame.origin.y, width: tableView.frame.width, height: tableView.frame.height)
+        
+        // 创建一个UIView作为遮罩层
+        let gradientView = UIView(frame: tableView.frame)
+        gradientView.layer.addSublayer(gradientLayer)
+
+        // 将遮罩视图添加到tableView的superview上，并确保它不会随tableView滚动
+        tableViewSuperview.addSubview(gradientView)
+        tableViewSuperview.bringSubviewToFront(gradientView)
+    }
+
+
 }
