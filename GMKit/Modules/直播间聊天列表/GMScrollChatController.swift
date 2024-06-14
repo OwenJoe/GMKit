@@ -19,6 +19,7 @@ class GMScrollChatController: GMBaseViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
+        tableView.transform = CGAffineTransformMakeScale(1, -1)
         return tableView
     }()
     

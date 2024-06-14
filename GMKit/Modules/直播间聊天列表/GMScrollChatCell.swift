@@ -15,8 +15,9 @@ class GMScrollChatCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.layer.masksToBounds = true
-        self.layer.cornerRadius = 8
+        self.layer.cornerRadius = 12
         self.backgroundColor = UIColor(white: 0, alpha: 0.2)
+        self.transform = CGAffineTransformMakeScale(1, -1)
         setupUI()
         
     }
@@ -42,28 +43,34 @@ class GMScrollChatCell: UITableViewCell {
         }
         
         let elements = [
+            GMRichTextElement(type: .text(content: "文字自带表情-->蔡徐坤是NBA打球最帅的woman~~😏😏😏😏😏😏，不服来辩~", color: .black, font: .systemFont(ofSize: 14), isClickable: true)),
             GMRichTextElement(type: .text(content: "This is some text ", color: .black, font: .systemFont(ofSize: 14), isClickable: true)),
             GMRichTextElement(type: .image(image: UIImage(named: "高兴表情") ?? UIImage(named: ""), size: CGSize(width: 12, height: 12), isClickable: true)),
             GMRichTextElement(type: .text(content: " and more text", color: .red, font: .boldSystemFont(ofSize: 16), isClickable: false)),
-            GMRichTextElement(type: .image(image: UIImage(named: "会员等级") ?? UIImage(named: ""), size: CGSize(width: 16, height: 12), isClickable: true)),
+            GMRichTextElement(type: .image(image: UIImage(named: "会员等级") ?? UIImage(named: ""), size: CGSize(width: 30, height: 30), isClickable: true)),
             GMRichTextElement(type: .text(content: "我又不吃美团我又不吃美团我又不吃美团我又不吃美团我又不吃美团我又不吃美团我又不吃美团我又不吃美团我又不吃美团我又不吃美团我又不吃美团我又不吃美团-->结束", color: .black, font: .systemFont(ofSize: 22), isClickable: true)),
+            GMRichTextElement(type: .image(image: UIImage(named: "tipvip") ?? UIImage(named: ""), size: CGSize(width: 30, height: 30), isClickable: true)),
         ]
 
         configure(with: elements, myLabel: myLabel)
     }
     
+    //具体处理效果
     func configure(with elements: [GMRichTextElement], myLabel: YYLabel) {
         let attributedString = NSMutableAttributedString()
-        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 12 // 设置行间距
+
         elements.forEach { element in
             switch element.type {
             case .text(let content, let color, let font, let isClickable):
                 let textAttributes: [NSAttributedString.Key: Any] = [
                     .foregroundColor: color,
-                    .font: font
+                    .font: font,
+                    .paragraphStyle: paragraphStyle // 应用段落样式
                 ]
                 let attributedText = NSMutableAttributedString(string: content, attributes: textAttributes)
-                
+
                 if isClickable {
                     attributedText.yy_setTextHighlight(NSRange(location: 0, length: content.count),
                                                         color: color,
@@ -71,14 +78,14 @@ class GMScrollChatCell: UITableViewCell {
                         print("点击了文字")
                     }
                 }
-                
+
                 attributedString.append(attributedText)
-                
+
             case .image(let image, let size, let isClickable):
                 if let image = image {
                     let imageView = UIImageView(image: image)
                     imageView.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-
+                    
                     let attachText = NSMutableAttributedString.yy_attachmentString(withContent: imageView, contentMode: .scaleAspectFit, attachmentSize: imageView.bounds.size, alignTo: UIFont.systemFont(ofSize: 100), alignment: .center)
 
                     if isClickable {
@@ -98,7 +105,7 @@ class GMScrollChatCell: UITableViewCell {
 
             }
         }
-        
+
         myLabel.attributedText = attributedString
     }
 }

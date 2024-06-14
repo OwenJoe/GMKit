@@ -34,6 +34,7 @@ class GMChatListTableView: UITableView{
         
         // 将渐变层设置为视图的遮罩
         self.layer.mask = gradientLayer
+
     }
 
 }
