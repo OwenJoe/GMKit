@@ -21,6 +21,7 @@ import Foundation
 @_exported import IQKeyboardManagerSwift
 @_exported import EmptyDataSet_Swift
 @_exported import Starscream
+@_exported import YYText
 
 /*****************************相应的key**********************************************/
 

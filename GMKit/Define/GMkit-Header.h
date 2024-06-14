@@ -9,4 +9,5 @@
 #define GMkit_Header_h
 
 #import "SVProgressHUD.h"
+#import "TTTAttributedLabel.h"
 #endif /* GMkit_Header_h */

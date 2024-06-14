@@ -11,21 +11,23 @@ class GMScrollChatController: GMBaseViewController {
     var autoScrollTimer: Timer?
     var listArr = [Any]()
     lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: CGRectMake(100, 150, 250, ScreenHeight * 0.75))
+        let tableView = UITableView(frame: CGRectMake(100, 150, 250, ScreenHeight * 0.75),style: .grouped)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: GMScrollChatCellKey, bundle: nil), forCellReuseIdentifier: GMScrollChatCellKey)
         tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.separatorStyle = .none
         return tableView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navTitle = "直播间滚动聊天列表"
+        view.backgroundColor = .white
         view.addSubview(tableView)
         // 开始自动滚动
-        startAutoScroll()
+//        startAutoScroll()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -40,13 +42,33 @@ class GMScrollChatController: GMBaseViewController {
 extension GMScrollChatController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return 1
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+       return 100
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+         return UIView()
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.01
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: GMScrollChatCellKey, for: indexPath) as? GMScrollChatCell
+        cell?.selectionStyle = .none
         return cell ?? GMScrollChatCell()
     }
 }
@@ -57,7 +79,7 @@ extension GMScrollChatController {
     
     // 启动自动滚动
        func startAutoScroll() {
-           autoScrollTimer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(autoScrollTableView), userInfo: nil, repeats: true)
+//           autoScrollTimer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(autoScrollTableView), userInfo: nil, repeats: true)
        }
 
        // 停止自动滚动
