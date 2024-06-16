@@ -142,7 +142,7 @@ class GMHomeController: GMBaseViewController,UITableViewDelegate, UITableViewDat
 //        }
 
      
-          let vc  =  GMScrollChatController()
+          let vc  =  GMScrollChatChoseController()
           self.navigationController?.pushViewController(vc, animated: true)
     }
 }

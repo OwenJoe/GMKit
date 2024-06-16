@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5ADCDBD42C1EE66100230E74 /* GMScrollChatChoseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADCDBD32C1EE66100230E74 /* GMScrollChatChoseController.swift */; };
+		5ADCDBD62C1EE86400230E74 /* GMScrollChatTwoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADCDBD52C1EE86400230E74 /* GMScrollChatTwoController.swift */; };
 		ABEA07EB2C119DE4007803B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA07EA2C119DE4007803B0 /* AppDelegate.swift */; };
 		ABEA07F42C119DE5007803B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABEA07F32C119DE5007803B0 /* Assets.xcassets */; };
 		ABEA07F72C119DE5007803B0 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = ABEA07F62C119DE5007803B0 /* Base */; };
@@ -54,7 +56,7 @@
 		ABEA08952C11BEB3007803B0 /* GMHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA08942C11BEB3007803B0 /* GMHomeModel.swift */; };
 		ABEA08972C12FCCD007803B0 /* GMHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA08962C12FCCD007803B0 /* GMHomeController.swift */; };
 		ABEA089E2C1306C4007803B0 /* GMWebSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA089D2C1306C4007803B0 /* GMWebSocketManager.swift */; };
-		ABF0A9272C1AD1250088A8DD /* GMScrollChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF0A9262C1AD1250088A8DD /* GMScrollChatController.swift */; };
+		ABF0A9272C1AD1250088A8DD /* GMScrollChatOneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF0A9262C1AD1250088A8DD /* GMScrollChatOneController.swift */; };
 		ABF0A92A2C1AD1DC0088A8DD /* GMScrollChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF0A9282C1AD1DC0088A8DD /* GMScrollChatCell.swift */; };
 		ABF0A92B2C1AD1DC0088A8DD /* GMScrollChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABF0A9292C1AD1DC0088A8DD /* GMScrollChatCell.xib */; };
 		ABF0A92D2C1AD33D0088A8DD /* GMScrollChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF0A92C2C1AD33D0088A8DD /* GMScrollChatModel.swift */; };
@@ -70,6 +72,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5ADCDBD32C1EE66100230E74 /* GMScrollChatChoseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMScrollChatChoseController.swift; sourceTree = "<group>"; };
+		5ADCDBD52C1EE86400230E74 /* GMScrollChatTwoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMScrollChatTwoController.swift; sourceTree = "<group>"; };
 		71BA121CC1FD1657A548D1C4 /* Pods-GMKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GMKit.debug.xcconfig"; path = "Target Support Files/Pods-GMKit/Pods-GMKit.debug.xcconfig"; sourceTree = "<group>"; };
 		795769CB755CB6489F5FE451 /* Pods-GMKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GMKit.release.xcconfig"; path = "Target Support Files/Pods-GMKit/Pods-GMKit.release.xcconfig"; sourceTree = "<group>"; };
 		ABEA07E72C119DE4007803B0 /* GMKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GMKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,7 +126,7 @@
 		ABEA08942C11BEB3007803B0 /* GMHomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMHomeModel.swift; sourceTree = "<group>"; };
 		ABEA08962C12FCCD007803B0 /* GMHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMHomeController.swift; sourceTree = "<group>"; };
 		ABEA089D2C1306C4007803B0 /* GMWebSocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMWebSocketManager.swift; sourceTree = "<group>"; };
-		ABF0A9262C1AD1250088A8DD /* GMScrollChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMScrollChatController.swift; sourceTree = "<group>"; };
+		ABF0A9262C1AD1250088A8DD /* GMScrollChatOneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMScrollChatOneController.swift; sourceTree = "<group>"; };
 		ABF0A9282C1AD1DC0088A8DD /* GMScrollChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMScrollChatCell.swift; sourceTree = "<group>"; };
 		ABF0A9292C1AD1DC0088A8DD /* GMScrollChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GMScrollChatCell.xib; sourceTree = "<group>"; };
 		ABF0A92C2C1AD33D0088A8DD /* GMScrollChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMScrollChatModel.swift; sourceTree = "<group>"; };
@@ -662,7 +666,9 @@
 			isa = PBXGroup;
 			children = (
 				ABF0A9652C1C33690088A8DD /* Resource */,
-				ABF0A9262C1AD1250088A8DD /* GMScrollChatController.swift */,
+				5ADCDBD32C1EE66100230E74 /* GMScrollChatChoseController.swift */,
+				ABF0A9262C1AD1250088A8DD /* GMScrollChatOneController.swift */,
+				5ADCDBD52C1EE86400230E74 /* GMScrollChatTwoController.swift */,
 				ABF0A9282C1AD1DC0088A8DD /* GMScrollChatCell.swift */,
 				ABF0A9292C1AD1DC0088A8DD /* GMScrollChatCell.xib */,
 				ABF0A92C2C1AD33D0088A8DD /* GMScrollChatModel.swift */,
@@ -825,7 +831,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABF0A9272C1AD1250088A8DD /* GMScrollChatController.swift in Sources */,
+				ABF0A9272C1AD1250088A8DD /* GMScrollChatOneController.swift in Sources */,
+				5ADCDBD42C1EE66100230E74 /* GMScrollChatChoseController.swift in Sources */,
 				ABEA084E2C11AB40007803B0 /* GMReachability.swift in Sources */,
 				ABEA084C2C11AB40007803B0 /* GMHttpUrl.swift in Sources */,
 				ABEA08772C11AD03007803B0 /* GMDetailsController.swift in Sources */,
@@ -867,6 +874,7 @@
 				ABEA088C2C11B96B007803B0 /* GMChatSendView.swift in Sources */,
 				ABEA085E2C11AB46007803B0 /* GMBaseTableView.swift in Sources */,
 				ABEA07EB2C119DE4007803B0 /* AppDelegate.swift in Sources */,
+				5ADCDBD62C1EE86400230E74 /* GMScrollChatTwoController.swift in Sources */,
 				ABEA08342C11AB1B007803B0 /* GMStringExt.swift in Sources */,
 				ABEA08352C11AB1B007803B0 /* GMDataExt.swift in Sources */,
 				ABF0A92D2C1AD33D0088A8DD /* GMScrollChatModel.swift in Sources */,

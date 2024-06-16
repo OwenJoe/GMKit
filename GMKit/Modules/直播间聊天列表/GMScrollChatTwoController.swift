@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GMScrollChatController: GMBaseViewController {
+class GMScrollChatTwoController: GMBaseViewController {
     var autoScrollTimer: Timer?
     var listArr = [Any]()
     lazy var tableView: GMChatListTableView = {
@@ -40,7 +40,7 @@ class GMScrollChatController: GMBaseViewController {
 }
 
 //列表内容
-extension GMScrollChatController: UITableViewDelegate, UITableViewDataSource {
+extension GMScrollChatTwoController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -76,7 +76,7 @@ extension GMScrollChatController: UITableViewDelegate, UITableViewDataSource {
 
 
 //滚动处理
-extension GMScrollChatController {
+extension GMScrollChatTwoController {
     
     // 启动自动滚动
        func startAutoScroll() {
@@ -146,7 +146,7 @@ extension GMScrollChatController {
 }
 
 //聊天顶部尾部模糊化
-extension GMScrollChatController{
+extension GMScrollChatTwoController{
     
     func addGradientToTableView() {
         guard let tableViewSuperview = tableView.superview else { return }
