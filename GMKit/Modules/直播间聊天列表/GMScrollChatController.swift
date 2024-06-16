@@ -35,8 +35,7 @@ class GMScrollChatController: GMBaseViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // 停止自动滚动
-        autoScrollTimer?.invalidate()
-        autoScrollTimer = nil
+        stopAutoScroll()
     }
 }
 
@@ -81,16 +80,22 @@ extension GMScrollChatController {
     
     // 启动自动滚动
        func startAutoScroll() {
+           
+           guard autoScrollTimer == nil else { return }
            autoScrollTimer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(autoScrollTableView), userInfo: nil, repeats: true)
+           print("开始---》")
+
        }
 
        // 停止自动滚动
        func stopAutoScroll() {
+           print("结束---》")
            autoScrollTimer?.invalidate()
            autoScrollTimer = nil
        }
 
     @objc func autoScrollTableView() {
+        print("滚动----》")
         // 获取当前滚动位置
         let currentOffset = tableView.contentOffset.y
         
