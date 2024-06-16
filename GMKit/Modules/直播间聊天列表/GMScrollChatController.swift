@@ -26,7 +26,7 @@ class GMScrollChatController: GMBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navTitle = "直播间滚动聊天列表"
-        view.backgroundColor = .white
+        view.backgroundColor = .gray
         view.addSubview(tableView)
 //        addGradientToTableView()
         // 开始自动滚动
