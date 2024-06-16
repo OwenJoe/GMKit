@@ -28,9 +28,8 @@ class GMScrollChatController: GMBaseViewController {
         navTitle = "直播间滚动聊天列表"
         view.backgroundColor = .gray
         view.addSubview(tableView)
-//        addGradientToTableView()
         // 开始自动滚动
-//        startAutoScroll()
+        startAutoScroll()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -82,7 +81,7 @@ extension GMScrollChatController {
     
     // 启动自动滚动
        func startAutoScroll() {
-//           autoScrollTimer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(autoScrollTableView), userInfo: nil, repeats: true)
+           autoScrollTimer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(autoScrollTableView), userInfo: nil, repeats: true)
        }
 
        // 停止自动滚动
@@ -91,22 +90,33 @@ extension GMScrollChatController {
            autoScrollTimer = nil
        }
 
-       // 自动滚动 TableView 的方法
-       @objc func autoScrollTableView() {
-           // 获取当前滚动位置
-           let currentOffset = tableView.contentOffset.y
-           // 计算下一个滚动位置
-           let nextOffset = CGPoint(x: 0, y: currentOffset + 50) // 增加50个点或者你想滚动的量
+    @objc func autoScrollTableView() {
+        // 获取当前滚动位置
+        let currentOffset = tableView.contentOffset.y
+        
+        // 计算每次滚动的量
+        let scrollAmount: CGFloat = 50
+        
+        // 判断是否翻转
+        let isReversed = !tableView.transform.isIdentity
+        
+        // 计算下一个滚动位置
+        let nextOffset: CGPoint
+        if isReversed {
+            nextOffset = CGPoint(x: 0, y: currentOffset - scrollAmount)
+        } else {
+            nextOffset = CGPoint(x: 0, y: currentOffset + scrollAmount)
+        }
 
-           // 检查是否到达底部
-           if nextOffset.y < tableView.contentSize.height - tableView.frame.size.height {
-               // 滚动到下一个位置
-               tableView.setContentOffset(nextOffset, animated: true)
-           } else {
-               // 如果到达底部，停止定时器
-               stopAutoScroll()
-           }
-       }
+        // 检查是否超出范围
+        if nextOffset.y >= 0 && nextOffset.y <= tableView.contentSize.height - tableView.frame.size.height {
+            // 滚动到下一个位置
+            tableView.setContentOffset(nextOffset, animated: true)
+        } else {
+            // 如果超出范围，停止定时器
+            stopAutoScroll()
+        }
+    }
 
        // MARK: - UIScrollViewDelegate
 
