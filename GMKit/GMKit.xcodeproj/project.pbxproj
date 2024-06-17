@@ -446,6 +446,7 @@
 		ABEA08192C119E4F007803B0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				ABF0A9802C2052BE0088A8DD /* 直播间礼物面板 */,
 				ABF0A97D2C204D060088A8DD /* 直播间顶部关注后自动伸缩 */,
 				ABF0A97C2C204CD30088A8DD /* 直播间左右切换清屏 */,
 				ABF0A97B2C204CC10088A8DD /* 多TextField为空判断 */,
@@ -740,6 +741,13 @@
 			children = (
 			);
 			path = "直播间顶部关注后自动伸缩";
+			sourceTree = "<group>";
+		};
+		ABF0A9802C2052BE0088A8DD /* 直播间礼物面板 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "直播间礼物面板";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
