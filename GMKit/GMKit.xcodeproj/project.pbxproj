@@ -67,7 +67,8 @@
 		ABF0A96B2C1C34050088A8DD /* 皇冠.png in Resources */ = {isa = PBXBuildFile; fileRef = ABF0A9672C1C34050088A8DD /* 皇冠.png */; };
 		ABF0A96C2C1C34050088A8DD /* tipvip.png in Resources */ = {isa = PBXBuildFile; fileRef = ABF0A9682C1C34050088A8DD /* tipvip.png */; };
 		ABF0A96D2C1C34050088A8DD /* 高兴表情.png in Resources */ = {isa = PBXBuildFile; fileRef = ABF0A9692C1C34050088A8DD /* 高兴表情.png */; };
-		ABF0A96F2C1C45840088A8DD /* GMChatListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF0A96E2C1C45840088A8DD /* GMChatListTableView.swift */; };
+		ABF0A96F2C1C45840088A8DD /* GMChatOneTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF0A96E2C1C45840088A8DD /* GMChatOneTableView.swift */; };
+		ABF0A9712C1FE9D40088A8DD /* GMChatTwoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF0A9702C1FE9D30088A8DD /* GMChatTwoTableView.swift */; };
 		E1DD1BC7CC1398032FC75D22 /* Pods_GMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C47D880714DCF1C44EDD97AF /* Pods_GMKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -137,7 +138,8 @@
 		ABF0A9672C1C34050088A8DD /* 皇冠.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "皇冠.png"; sourceTree = "<group>"; };
 		ABF0A9682C1C34050088A8DD /* tipvip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tipvip.png; sourceTree = "<group>"; };
 		ABF0A9692C1C34050088A8DD /* 高兴表情.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "高兴表情.png"; sourceTree = "<group>"; };
-		ABF0A96E2C1C45840088A8DD /* GMChatListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMChatListTableView.swift; sourceTree = "<group>"; };
+		ABF0A96E2C1C45840088A8DD /* GMChatOneTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMChatOneTableView.swift; sourceTree = "<group>"; };
+		ABF0A9702C1FE9D30088A8DD /* GMChatTwoTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMChatTwoTableView.swift; sourceTree = "<group>"; };
 		C47D880714DCF1C44EDD97AF /* Pods_GMKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GMKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -672,7 +674,8 @@
 				ABF0A9282C1AD1DC0088A8DD /* GMScrollChatCell.swift */,
 				ABF0A9292C1AD1DC0088A8DD /* GMScrollChatCell.xib */,
 				ABF0A92C2C1AD33D0088A8DD /* GMScrollChatModel.swift */,
-				ABF0A96E2C1C45840088A8DD /* GMChatListTableView.swift */,
+				ABF0A96E2C1C45840088A8DD /* GMChatOneTableView.swift */,
+				ABF0A9702C1FE9D30088A8DD /* GMChatTwoTableView.swift */,
 			);
 			path = "直播间聊天列表";
 			sourceTree = "<group>";
@@ -843,7 +846,7 @@
 				ABEA08512C11AB40007803B0 /* GMProgressHUD.swift in Sources */,
 				ABEA08302C11AB1B007803B0 /* GMViewControllerExt.swift in Sources */,
 				ABEA08362C11AB1B007803B0 /* GMViewExt.swift in Sources */,
-				ABF0A96F2C1C45840088A8DD /* GMChatListTableView.swift in Sources */,
+				ABF0A96F2C1C45840088A8DD /* GMChatOneTableView.swift in Sources */,
 				ABEA08322C11AB1B007803B0 /* GMImageExt.swift in Sources */,
 				ABEA089E2C1306C4007803B0 /* GMWebSocketManager.swift in Sources */,
 				ABF0A92A2C1AD1DC0088A8DD /* GMScrollChatCell.swift in Sources */,
@@ -874,6 +877,7 @@
 				ABEA088C2C11B96B007803B0 /* GMChatSendView.swift in Sources */,
 				ABEA085E2C11AB46007803B0 /* GMBaseTableView.swift in Sources */,
 				ABEA07EB2C119DE4007803B0 /* AppDelegate.swift in Sources */,
+				ABF0A9712C1FE9D40088A8DD /* GMChatTwoTableView.swift in Sources */,
 				5ADCDBD62C1EE86400230E74 /* GMScrollChatTwoController.swift in Sources */,
 				ABEA08342C11AB1B007803B0 /* GMStringExt.swift in Sources */,
 				ABEA08352C11AB1B007803B0 /* GMDataExt.swift in Sources */,
