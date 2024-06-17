@@ -14,7 +14,6 @@ class TapHandler {
     
     static func addTapGesture(to view: UIView, action: @escaping () -> Void) {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-        view.isUserInteractionEnabled = true
         view.addGestureRecognizer(tapGesture)
         actions[view] = action
     }

@@ -1,5 +1,5 @@
 //
-//  GMChatListTableView.swift
+//  GMChatTwoTableView.swift
 //  GMKit
 //
 //  Created by hule on 2024/6/14.
@@ -7,9 +7,13 @@
 
 import UIKit
 
-class GMChatOneTableView: UITableView{
+import UIKit
+
+class GMChatThreeTableView: UITableView{
     //设置GCD定时器
     var autoScrollTimer: DispatchSourceTimer?
+    //设置模拟插入数据的定时器
+    var insertDataTimer: DispatchSourceTimer?
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         setupUI()
@@ -37,10 +41,27 @@ class GMChatOneTableView: UITableView{
         self.transform = CGAffineTransform(scaleX: 1, y: -1)
     }
     
+    
+    //开启模拟插入数据
+    func setupSimulateTimer() {
+         
+        insertDataTimer = DispatchSource.makeTimerSource(queue: DispatchQueue.main)
+        insertDataTimer?.schedule(deadline: .now(), repeating: 1.0)
+        insertDataTimer?.setEventHandler(handler: { [weak self] in
+             
+        })
+        insertDataTimer?.resume()
+    }
+    
+    //停止模拟插入数据
+    func stopSimulateTimer() {
+        insertDataTimer?.cancel()
+        insertDataTimer = nil
+    }
 }
 
 
-extension GMChatOneTableView: UIScrollViewDelegate {
+extension GMChatThreeTableView: UIScrollViewDelegate {
     
     
     // MARK: - UIScrollViewDelegate
@@ -115,7 +136,7 @@ extension GMChatOneTableView: UIScrollViewDelegate {
 
 
 //代理
-extension GMChatOneTableView:UITableViewDelegate, UITableViewDataSource {
+extension GMChatThreeTableView:UITableViewDelegate, UITableViewDataSource {
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -153,7 +174,7 @@ extension GMChatOneTableView:UITableViewDelegate, UITableViewDataSource {
 
 
 //遮罩效果处理
-extension GMChatOneTableView {
+extension GMChatThreeTableView {
     //只有顶部有遮罩效果，配合transform列表翻转后跟着翻转
 //    func setTableGradientLayer() {
 //        // 创建渐变层

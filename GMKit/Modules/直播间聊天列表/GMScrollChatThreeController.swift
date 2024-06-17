@@ -1,10 +1,10 @@
 import UIKit
 
-class GMScrollChatThreeController: GMBaseViewController {
+class GMScrollChatOneController: GMBaseViewController {
     
     var listArr = [Any]()
-    lazy var tableView: GMChatThreeTableView = {
-        let tableView = GMChatThreeTableView(frame: CGRect(x: 100, y: 150, width: 250, height: UIScreen.main.bounds.height * 0.75), style: .grouped)
+    lazy var tableView: GMChatOneTableView = {
+        let tableView = GMChatOneTableView(frame: CGRect(x: 100, y: 150, width: 250, height: UIScreen.main.bounds.height * 0.75), style: .grouped)
         return tableView
     }()
     

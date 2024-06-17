@@ -10,7 +10,7 @@ import UIKit
 class GMScrollChatChoseController: GMBaseViewController, UITableViewDelegate, UITableViewDataSource {
 
     let cellID  = "cell"
-    var listArr = ["GCD模式","NSTime模式"]
+    var listArr = ["GCD模式","NSTime模式", "数据自动插入"]
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.bounds, style: .grouped)
         tableView.delegate = self
@@ -50,9 +50,14 @@ class GMScrollChatChoseController: GMBaseViewController, UITableViewDelegate, UI
             let oneVc =  GMScrollChatOneController()
             self.navigationController?.pushViewController(oneVc, animated: true)
         }
-        else {
+        else if indexPath.row == 1{
             
             let twoVc =  GMScrollChatTwoController()
+            self.navigationController?.pushViewController(twoVc, animated: true)
+        }       
+        else if indexPath.row == 2{
+            
+            let twoVc =  GMScrollChatThreeController()
             self.navigationController?.pushViewController(twoVc, animated: true)
         }
     }
