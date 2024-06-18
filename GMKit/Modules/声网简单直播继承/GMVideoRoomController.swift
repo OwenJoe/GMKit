@@ -1,0 +1,164 @@
+//
+//  GMVideoRoomController.swift
+//  GMKit
+//
+//  Created by hule on 2024/6/18.
+//  参考 https://doc.shengwang.cn/doc/rtc/ios/get-started/quick-start
+
+import UIKit
+
+//用户角色设置
+enum VideoRoleType {
+   case Broadcaster //主播
+   case Audience  //观众
+}
+
+
+class GMVideoRoomController: GMBaseViewController {
+    let masterUid = 123456789 //房主ID
+    let patronIID = 888999666 //客人ID
+    let roomid = "GMVoicRoom"
+    var profile:AgoraChannelProfile = .liveBroadcasting
+    let appid = "378f8206974d4010a6ae06fb2dff4b3f"
+    let token = "007eJxTYHjb2P152rEEg/ClE8+nTelq3ts1e6dpYNvDrPDEiQzCWe4KDMbmFmkWRgZmluYmKSYGhgaJZompBmZpSUYpaWkmScZp53QL0xoCGRkO7wpmYmSAQBCfi8HdNyw/MzkoPz+XgQEAYrUiVA=="  //24小时内鉴权key会失效 需要重新配置
+    // 本地视频视图
+    var localView: UIView!
+    // 远端视频视图
+    var remoteView: UIView!
+    // RTC 引擎
+    var agoraKit: AgoraRtcEngineKit!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navTitle = "声网简单直播demo集成"
+        view.backgroundColor = .white
+        localView = UIView(frame: UIScreen.main.bounds)
+        remoteView = UIView(
+            frame: CGRect(x: self.view.bounds.width - 135, y: 50, width: 135, height: 240))
+        self.view.insertSubview(localView, at: 0)
+        self.view.addSubview(remoteView)
+        // 当加载视图后，你可以进行其他其他设置
+
+    }
+
+    //配置必要参数
+    func setupConfig(uid: Int, type: VoiceRoleType)  {
+        // 在这里输入你在声网控制台中获取的 App ID
+        agoraKit = AgoraRtcEngineKit.sharedEngine(withAppId:appid, delegate: self)
+        // 启用视频模块
+        agoraKit.enableVideo()
+
+        let videoCanvas = AgoraRtcVideoCanvas()
+        videoCanvas.view = localView
+        videoCanvas.renderMode = .hidden
+        // 设置本地视图
+        agoraKit.setupLocalVideo(videoCanvas)
+        // 开始本地视频预览
+        agoraKit.startPreview()
+        
+        let options = AgoraRtcChannelMediaOptions()
+        // 设置频道场景为直播
+        options.channelProfile = .liveBroadcasting
+        // 设置用户角色为主播；如果要将用户角色设置为观众，保持默认值即可
+        if type == .Broadcaster {
+            options.clientRoleType = .broadcaster  // 设置用户角色为主播
+        }
+        else {
+            options.clientRoleType = .audience  // 设置用户角色为观众
+        }
+        // 发布麦克风采集的音频
+        options.publishMicrophoneTrack = true
+        // 发布摄像头采集的视频
+        options.publishCameraTrack = true
+        // 自动订阅所有音频流
+        options.autoSubscribeAudio = true
+        // 自动订阅所有视频流
+        options.autoSubscribeVideo = true
+        // 使用临时 Token 加入频道，在这里传入你的项目的 Token 和频道名
+        // uid 为 0 表示由引擎内部随机生成; 成功后会触发 didJoinChannel 回调
+        let result = agoraKit.joinChannel(byToken: token, channelId: roomid, uid: UInt(uid), mediaOptions: options)
+        if result != 0 {
+            self.showAlert(title: "Error", message: "joinChannel call failed: \(result), please check your params")
+        } else {
+            print("当前用户>>>>\(uid)成功加入频道")
+            SVProgressHUD.showSuccess(withStatus: "当前用户>>>>\(uid)成功加入频道")
+        }
+    }
+    
+    
+    //销毁
+    @IBAction func destroyVideo(_ sender: Any) {
+        agoraKit.stopPreview()
+        agoraKit.leaveChannel(nil)
+    }
+    
+    //结束
+    @IBAction func stopVideo(_ sender: Any) {
+        AgoraRtcEngineKit.destroy()
+    }
+    
+    
+    //房主创建房间
+    @IBAction func createVideoRoom(_ sender: Any) {
+        
+        setupConfig(uid: masterUid, type: .Broadcaster)
+    }
+    
+    //用户加入房间
+    @IBAction func JoinVideoRoom(_ sender: Any) {
+        
+        setupConfig(uid: patronIID, type: .Audience)
+    }
+}
+
+
+///AgoraRtcEngineDelegate
+extension GMVideoRoomController : AgoraRtcEngineDelegate {
+    
+    //发生错误回调
+    func rtcEngine(_ engine: AgoraRtcEngineKit, didOccur errorType: AgoraEncryptionErrorType) {
+        self.showAlert(title: "Error", message: "didOccur: \(errorType), please check your params")
+    }
+    
+    //远端用户（通信场景）/主播（直播场景）加入当前频道回调。
+    func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinedOfUid uid: UInt, elapsed: Int) {
+        self.showAlert(title: "Info", message: "有人加入了当前频道:didJoinedOfUid: \(uid)")
+        // 当远端用户加入频道后，显示指定 uid 的远端视频流
+        let videoCanvas = AgoraRtcVideoCanvas()
+        videoCanvas.uid = uid
+        videoCanvas.view = remoteView
+        videoCanvas.renderMode = .hidden
+        agoraKit.setupRemoteVideo(videoCanvas)
+    }
+    
+    //成功加入频道回调。
+    func rtcEngine(_ engine: AgoraRtcEngineKit, didJoinChannel channel: String, withUid uid: UInt, elapsed: Int) {
+       print("当前用户:\(uid)成功加入房间回调")
+        print("didJoinChannel: \(channel), uid: \(uid)")
+
+    }
+    
+    //远端用户（通信场景）/主播（直播场景）离开当前频道回调。
+    func rtcEngine(_ engine: AgoraRtcEngineKit, didOfflineOfUid uid: UInt, reason: AgoraUserOfflineReason) {
+        print("当前用户:\(uid)离开频道回调")
+        let videoCanvas = AgoraRtcVideoCanvas()
+        videoCanvas.uid = uid
+        videoCanvas.view = nil
+        agoraKit.setupRemoteVideo(videoCanvas)
+    }
+}
+
+
+//弹窗提示
+extension GMVideoRoomController {
+    //弹窗提示
+    func showAlert(title: String? = nil, message: String, textAlignment: NSTextAlignment = .center) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertController.addAction(action)
+        if let messageLabel = alertController.view.value(forKeyPath: "_messageLabel") as? UILabel {
+            messageLabel.textAlignment = textAlignment
+        }
+        self.present(alertController, animated: true, completion: nil)
+    }
+}

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GMVideoRoomController" customModule="GMKit" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VsJ-IQ-L3J">
+                    <rect key="frame" x="96.666666666666686" y="159" width="200" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="tis-HX-Se1"/>
+                        <constraint firstAttribute="width" constant="200" id="zqM-At-X9l"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="主播开播"/>
+                    <connections>
+                        <action selector="createVideoRoom:" destination="-1" eventType="touchUpInside" id="jdu-Td-FqA"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAq-Uu-D9D">
+                    <rect key="frame" x="96.666666666666686" y="207" width="200" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="L7r-aU-Poa"/>
+                        <constraint firstAttribute="height" constant="40" id="dga-1L-3IV"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="用户观看"/>
+                    <connections>
+                        <action selector="JoinVideoRoom:" destination="-1" eventType="touchUpInside" id="03B-xr-L6d"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNR-P5-yvt">
+                    <rect key="frame" x="96.666666666666686" y="255" width="200" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="7ct-tA-QcG"/>
+                        <constraint firstAttribute="width" constant="200" id="sYy-QF-MMZ"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="结束"/>
+                    <connections>
+                        <action selector="stopVideo:" destination="-1" eventType="touchUpInside" id="DBH-eR-pbo"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QjF-k4-Z8j">
+                    <rect key="frame" x="96.666666666666686" y="303" width="200" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="FTY-w2-CmN"/>
+                        <constraint firstAttribute="height" constant="40" id="OQV-iE-5l8"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="销毁"/>
+                    <connections>
+                        <action selector="destroyVideo:" destination="-1" eventType="touchUpInside" id="0gT-wx-9HF"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="AAq-Uu-D9D" firstAttribute="width" secondItem="VsJ-IQ-L3J" secondAttribute="width" id="17d-Vn-Fb0"/>
+                <constraint firstItem="VsJ-IQ-L3J" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2w1-ql-DYE"/>
+                <constraint firstItem="lNR-P5-yvt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3j6-aR-OSj"/>
+                <constraint firstItem="QjF-k4-Z8j" firstAttribute="width" secondItem="VsJ-IQ-L3J" secondAttribute="width" id="3qa-JD-EJM"/>
+                <constraint firstItem="QjF-k4-Z8j" firstAttribute="centerX" secondItem="VsJ-IQ-L3J" secondAttribute="centerX" id="8a9-5M-thT"/>
+                <constraint firstItem="QjF-k4-Z8j" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="B8S-SP-8lR"/>
+                <constraint firstItem="lNR-P5-yvt" firstAttribute="top" secondItem="AAq-Uu-D9D" secondAttribute="bottom" constant="8" id="D1g-eO-7pG"/>
+                <constraint firstItem="lNR-P5-yvt" firstAttribute="height" secondItem="VsJ-IQ-L3J" secondAttribute="height" id="Ege-Zg-O4Q"/>
+                <constraint firstItem="VsJ-IQ-L3J" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="JP2-lX-vJ7"/>
+                <constraint firstItem="lNR-P5-yvt" firstAttribute="width" secondItem="VsJ-IQ-L3J" secondAttribute="width" id="MAA-vt-ghv"/>
+                <constraint firstItem="AAq-Uu-D9D" firstAttribute="height" secondItem="VsJ-IQ-L3J" secondAttribute="height" id="PaI-KB-f2k"/>
+                <constraint firstItem="QjF-k4-Z8j" firstAttribute="top" secondItem="lNR-P5-yvt" secondAttribute="bottom" constant="8" id="U9m-ts-KPv"/>
+                <constraint firstItem="AAq-Uu-D9D" firstAttribute="top" secondItem="VsJ-IQ-L3J" secondAttribute="bottom" constant="8" id="ULN-Zf-eGm"/>
+                <constraint firstItem="QjF-k4-Z8j" firstAttribute="height" secondItem="VsJ-IQ-L3J" secondAttribute="height" id="Vk5-D2-ozG"/>
+                <constraint firstItem="lNR-P5-yvt" firstAttribute="centerX" secondItem="VsJ-IQ-L3J" secondAttribute="centerX" id="ogK-Zd-uJ0"/>
+                <constraint firstItem="AAq-Uu-D9D" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qvs-LW-FoC"/>
+                <constraint firstItem="AAq-Uu-D9D" firstAttribute="centerX" secondItem="VsJ-IQ-L3J" secondAttribute="centerX" id="sca-7Y-fhE"/>
+            </constraints>
+            <point key="canvasLocation" x="-234" y="-8"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

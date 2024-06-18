@@ -11,6 +11,8 @@
 		5ADCDBD62C1EE86400230E74 /* GMScrollChatTwoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADCDBD52C1EE86400230E74 /* GMScrollChatTwoController.swift */; };
 		ABA10D592C216072002F7E4F /* GMVoiceRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA10D572C216072002F7E4F /* GMVoiceRoomController.swift */; };
 		ABA10D5A2C216072002F7E4F /* GMVoiceRoomController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABA10D582C216072002F7E4F /* GMVoiceRoomController.xib */; };
+		ABA10D7E2C217A6F002F7E4F /* GMVideoRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA10D7C2C217A6F002F7E4F /* GMVideoRoomController.swift */; };
+		ABA10D7F2C217A6F002F7E4F /* GMVideoRoomController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABA10D7D2C217A6F002F7E4F /* GMVideoRoomController.xib */; };
 		ABEA07EB2C119DE4007803B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA07EA2C119DE4007803B0 /* AppDelegate.swift */; };
 		ABEA07F42C119DE5007803B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABEA07F32C119DE5007803B0 /* Assets.xcassets */; };
 		ABEA07F72C119DE5007803B0 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = ABEA07F62C119DE5007803B0 /* Base */; };
@@ -84,6 +86,8 @@
 		795769CB755CB6489F5FE451 /* Pods-GMKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GMKit.release.xcconfig"; path = "Target Support Files/Pods-GMKit/Pods-GMKit.release.xcconfig"; sourceTree = "<group>"; };
 		ABA10D572C216072002F7E4F /* GMVoiceRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMVoiceRoomController.swift; sourceTree = "<group>"; };
 		ABA10D582C216072002F7E4F /* GMVoiceRoomController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GMVoiceRoomController.xib; sourceTree = "<group>"; };
+		ABA10D7C2C217A6F002F7E4F /* GMVideoRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMVideoRoomController.swift; sourceTree = "<group>"; };
+		ABA10D7D2C217A6F002F7E4F /* GMVideoRoomController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GMVideoRoomController.xib; sourceTree = "<group>"; };
 		ABEA07E72C119DE4007803B0 /* GMKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GMKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABEA07EA2C119DE4007803B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABEA07F32C119DE5007803B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -189,6 +193,15 @@
 				ABA10D582C216072002F7E4F /* GMVoiceRoomController.xib */,
 			);
 			path = "声网简单语聊房集成";
+			sourceTree = "<group>";
+		};
+		ABA10D7B2C217A44002F7E4F /* 声网简单直播继承 */ = {
+			isa = PBXGroup;
+			children = (
+				ABA10D7C2C217A6F002F7E4F /* GMVideoRoomController.swift */,
+				ABA10D7D2C217A6F002F7E4F /* GMVideoRoomController.xib */,
+			);
+			path = "声网简单直播继承";
 			sourceTree = "<group>";
 		};
 		ABEA07DE2C119DE4007803B0 = {
@@ -459,6 +472,7 @@
 		ABEA08192C119E4F007803B0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				ABA10D7B2C217A44002F7E4F /* 声网简单直播继承 */,
 				ABA10D562C21406D002F7E4F /* 声网简单语聊房集成 */,
 				ABF0A9802C2052BE0088A8DD /* 直播间礼物面板 */,
 				ABF0A97D2C204D060088A8DD /* 直播间顶部关注后自动伸缩 */,
@@ -826,6 +840,7 @@
 			files = (
 				ABEA088D2C11B96B007803B0 /* GMChatSendView.xib in Resources */,
 				ABA10D5A2C216072002F7E4F /* GMVoiceRoomController.xib in Resources */,
+				ABA10D7F2C217A6F002F7E4F /* GMVideoRoomController.xib in Resources */,
 				ABEA07F42C119DE5007803B0 /* Assets.xcassets in Resources */,
 				ABF0A9642C1C2D6A0088A8DD /* unselect.png in Resources */,
 				ABF0A92B2C1AD1DC0088A8DD /* GMScrollChatCell.xib in Resources */,
@@ -898,6 +913,7 @@
 				ABEA08882C11B96B007803B0 /* GMMessageController.swift in Sources */,
 				ABEA085C2C11AB46007803B0 /* GMBaseWebViewController.swift in Sources */,
 				ABEA086F2C11AC7E007803B0 /* GMMineController.swift in Sources */,
+				ABA10D7E2C217A6F002F7E4F /* GMVideoRoomController.swift in Sources */,
 				ABEA082E2C11AB1B007803B0 /* GMButtonExt.swift in Sources */,
 				ABEA08512C11AB40007803B0 /* GMProgressHUD.swift in Sources */,
 				ABA10D592C216072002F7E4F /* GMVoiceRoomController.swift in Sources */,

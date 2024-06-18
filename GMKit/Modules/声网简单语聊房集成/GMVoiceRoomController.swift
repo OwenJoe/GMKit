@@ -8,6 +8,13 @@
 // 参考链接  https://blog.csdn.net/agora_cloud/article/details/130828327
 
 import UIKit
+
+//用户角色设置
+enum VoiceRoleType {
+   case Broadcaster //主播
+   case Audience  //观众
+}
+
 class GMVoiceRoomController: GMBaseViewController, UICollectionViewDelegate {
     // 初始化操作
     var agoraKit : AgoraRtcEngineKit!
@@ -34,7 +41,7 @@ class GMVoiceRoomController: GMBaseViewController, UICollectionViewDelegate {
     
 
     //配置房间的一些参数
-    func setupConfig(uid: Int)  {
+    func setupConfig(uid: Int, type: VoiceRoleType)  {
         // 初始化AgoraRtcEngineKit，可加入自定义配置，比如加入频道是否开启麦克风、摄像头等。
         let config = AgoraRtcEngineConfig()
         config.appId = appid
@@ -49,7 +56,13 @@ class GMVoiceRoomController: GMBaseViewController, UICollectionViewDelegate {
         option.publishCameraTrack = false  // 禁用摄像头
         option.publishMicrophoneTrack = true  // 启用麦克风
         option.enableAudioRecordingOrPlayout = true  // 启用音频录制或播放
-        option.clientRoleType = .broadcaster  // 设置用户角色为主播
+        if type == .Broadcaster {
+            option.clientRoleType = .broadcaster  // 设置用户角色为主播
+        }
+        else {
+            option.clientRoleType = .audience  // 设置用户角色为观众
+        }
+        
         option.autoSubscribeAudio = true  // 自动订阅音频
         let result = agoraKit.joinChannel(byToken: token, channelId: roomid, uid: UInt(uid), mediaOptions: option)
         if result != 0 {
@@ -63,13 +76,13 @@ class GMVoiceRoomController: GMBaseViewController, UICollectionViewDelegate {
     //房主创建房间
     @IBAction func createVoiceRoom(_ sender: Any) {
         
-       setupConfig(uid: masterUid)
+        setupConfig(uid: masterUid, type: .Broadcaster)
     }
     
     //用户加入房间
-    @IBAction func JoinRoom(_ sender: Any) {
+    @IBAction func JoinVoiceRoom(_ sender: Any) {
         
-       setupConfig(uid: patronIID)
+        setupConfig(uid: patronIID, type: .Audience)
     }
     
     //打开麦克风
