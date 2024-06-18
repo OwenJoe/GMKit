@@ -67,6 +67,32 @@
                         <action selector="destroyVideo:" destination="-1" eventType="touchUpInside" id="0gT-wx-9HF"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQv-Xm-ZLj">
+                    <rect key="frame" x="96.666666666666686" y="351" width="200" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="1P9-6q-Ski"/>
+                        <constraint firstAttribute="width" constant="200" id="oXI-cH-QWB"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="观众连麦"/>
+                    <connections>
+                        <action selector="AudienceConnection:" destination="-1" eventType="touchUpInside" id="xWt-XA-N8o"/>
+                        <action selector="destroyVideo:" destination="-1" eventType="touchUpInside" id="WB2-ar-ZFe"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahs-GJ-N1t">
+                    <rect key="frame" x="96.666666666666686" y="399" width="200" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="3DC-Aj-56A"/>
+                        <constraint firstAttribute="width" constant="200" id="R2S-vg-VpG"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="观众下麦"/>
+                    <connections>
+                        <action selector="AudienceDrinking:" destination="-1" eventType="touchUpInside" id="YzS-wU-Lhq"/>
+                        <action selector="destroyVideo:" destination="-1" eventType="touchUpInside" id="4BK-MR-HZn"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -75,6 +101,7 @@
                 <constraint firstItem="VsJ-IQ-L3J" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2w1-ql-DYE"/>
                 <constraint firstItem="lNR-P5-yvt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3j6-aR-OSj"/>
                 <constraint firstItem="QjF-k4-Z8j" firstAttribute="width" secondItem="VsJ-IQ-L3J" secondAttribute="width" id="3qa-JD-EJM"/>
+                <constraint firstItem="dQv-Xm-ZLj" firstAttribute="top" secondItem="QjF-k4-Z8j" secondAttribute="bottom" constant="8" id="58E-uu-HNe"/>
                 <constraint firstItem="QjF-k4-Z8j" firstAttribute="centerX" secondItem="VsJ-IQ-L3J" secondAttribute="centerX" id="8a9-5M-thT"/>
                 <constraint firstItem="QjF-k4-Z8j" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="B8S-SP-8lR"/>
                 <constraint firstItem="lNR-P5-yvt" firstAttribute="top" secondItem="AAq-Uu-D9D" secondAttribute="bottom" constant="8" id="D1g-eO-7pG"/>
@@ -85,11 +112,14 @@
                 <constraint firstItem="QjF-k4-Z8j" firstAttribute="top" secondItem="lNR-P5-yvt" secondAttribute="bottom" constant="8" id="U9m-ts-KPv"/>
                 <constraint firstItem="AAq-Uu-D9D" firstAttribute="top" secondItem="VsJ-IQ-L3J" secondAttribute="bottom" constant="8" id="ULN-Zf-eGm"/>
                 <constraint firstItem="QjF-k4-Z8j" firstAttribute="height" secondItem="VsJ-IQ-L3J" secondAttribute="height" id="Vk5-D2-ozG"/>
+                <constraint firstItem="Ahs-GJ-N1t" firstAttribute="centerX" secondItem="dQv-Xm-ZLj" secondAttribute="centerX" id="VzG-RU-Iu2"/>
+                <constraint firstItem="dQv-Xm-ZLj" firstAttribute="centerX" secondItem="QjF-k4-Z8j" secondAttribute="centerX" id="j42-oh-YEY"/>
                 <constraint firstItem="lNR-P5-yvt" firstAttribute="centerX" secondItem="VsJ-IQ-L3J" secondAttribute="centerX" id="ogK-Zd-uJ0"/>
                 <constraint firstItem="AAq-Uu-D9D" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qvs-LW-FoC"/>
                 <constraint firstItem="AAq-Uu-D9D" firstAttribute="centerX" secondItem="VsJ-IQ-L3J" secondAttribute="centerX" id="sca-7Y-fhE"/>
+                <constraint firstItem="Ahs-GJ-N1t" firstAttribute="top" secondItem="dQv-Xm-ZLj" secondAttribute="bottom" constant="8" id="ul0-lL-GOz"/>
             </constraints>
-            <point key="canvasLocation" x="-234" y="-8"/>
+            <point key="canvasLocation" x="-816" y="-33"/>
         </view>
     </objects>
     <resources>

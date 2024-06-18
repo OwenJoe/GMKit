@@ -22,7 +22,7 @@ class GMVoiceRoomController: GMBaseViewController, UICollectionViewDelegate {
     let appid = "378f8206974d4010a6ae06fb2dff4b3f"
     let token = "007eJxTYHjb2P152rEEg/ClE8+nTelq3ts1e6dpYNvDrPDEiQzCWe4KDMbmFmkWRgZmluYmKSYGhgaJZompBmZpSUYpaWkmScZp53QL0xoCGRkO7wpmYmSAQBCfi8HdNyw/MzkoPz+XgQEAYrUiVA=="  //24小时内鉴权key会失效 需要重新配置
     let masterUid = 123456789 //房主ID
-    let patronIID = 888999666 //客人ID
+    let patronIID = 000000000 //客人ID
     let roomid = "GMVoicRoom"
     var profile:AgoraChannelProfile = .liveBroadcasting
 
@@ -31,7 +31,7 @@ class GMVoiceRoomController: GMBaseViewController, UICollectionViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        navTitle = "声网语聊房测试"
+        navTitle = "声网语聊房demo测试"
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -54,12 +54,13 @@ class GMVoiceRoomController: GMBaseViewController, UICollectionViewDelegate {
         // 默认加入频道即发送音频，不发送视频
         let option = AgoraRtcChannelMediaOptions()
         option.publishCameraTrack = false  // 禁用摄像头
-        option.publishMicrophoneTrack = true  // 启用麦克风
-        option.enableAudioRecordingOrPlayout = true  // 启用音频录制或播放
         if type == .Broadcaster {
             option.clientRoleType = .broadcaster  // 设置用户角色为主播
+            option.publishMicrophoneTrack = true  // 启用麦克风
+//            option.enableAudioRecordingOrPlayout = true  // 启用音频录制或播放
         }
         else {
+            //观众只是进入房间无需立马启用麦克风或者启用音频录制或者播放
             option.clientRoleType = .audience  // 设置用户角色为观众
         }
         
@@ -101,7 +102,20 @@ class GMVoiceRoomController: GMBaseViewController, UICollectionViewDelegate {
         print("离开了房间")
     }
     
-
+    //观众连麦 参考:https://doc.shengwang.cn/doc/showroom/ios/basic-features/integrate-showroom#%E8%A7%82%E4%BC%97%E8%BF%9E%E9%BA%A6
+    @IBAction func AudienceConnection(_ sender: Any) {
+        //无论是主播邀请连麦,还是观众发起请求连麦,都是观众身份切换为主播身份,下麦后又重新切回观众身份
+//        agoraKit.setClientRole(.broadcaster)
+        print("开始连麦")
+    }
+    
+    
+    //观众下麦 下麦后又重新切回观众身份
+    @IBAction func AudienceDrinking(_ sender: Any) {
+        
+//        agoraKit.setClientRole(.audience)
+        print("下麦,切回普通身份")
+    }
 }
 
 

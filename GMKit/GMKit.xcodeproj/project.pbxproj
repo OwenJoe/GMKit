@@ -195,13 +195,13 @@
 			path = "声网简单语聊房集成";
 			sourceTree = "<group>";
 		};
-		ABA10D7B2C217A44002F7E4F /* 声网简单直播继承 */ = {
+		ABA10D7B2C217A44002F7E4F /* 声网简单直播集成 */ = {
 			isa = PBXGroup;
 			children = (
 				ABA10D7C2C217A6F002F7E4F /* GMVideoRoomController.swift */,
 				ABA10D7D2C217A6F002F7E4F /* GMVideoRoomController.xib */,
 			);
-			path = "声网简单直播继承";
+			path = "声网简单直播集成";
 			sourceTree = "<group>";
 		};
 		ABEA07DE2C119DE4007803B0 = {
@@ -472,7 +472,7 @@
 		ABEA08192C119E4F007803B0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				ABA10D7B2C217A44002F7E4F /* 声网简单直播继承 */,
+				ABA10D7B2C217A44002F7E4F /* 声网简单直播集成 */,
 				ABA10D562C21406D002F7E4F /* 声网简单语聊房集成 */,
 				ABF0A9802C2052BE0088A8DD /* 直播间礼物面板 */,
 				ABF0A97D2C204D060088A8DD /* 直播间顶部关注后自动伸缩 */,

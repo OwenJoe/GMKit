@@ -62,18 +62,21 @@ class GMVideoRoomController: GMBaseViewController {
         // 设置用户角色为主播；如果要将用户角色设置为观众，保持默认值即可
         if type == .Broadcaster {
             options.clientRoleType = .broadcaster  // 设置用户角色为主播
+            // 发布麦克风采集的音频
+            options.publishMicrophoneTrack = true
+            // 发布摄像头采集的视频
+            options.publishCameraTrack = true
+            // 自动订阅所有音频流
+            options.autoSubscribeAudio = true
+            // 自动订阅所有视频流
+            options.autoSubscribeVideo = true
         }
         else {
             options.clientRoleType = .audience  // 设置用户角色为观众
         }
-        // 发布麦克风采集的音频
-        options.publishMicrophoneTrack = true
-        // 发布摄像头采集的视频
-        options.publishCameraTrack = true
-        // 自动订阅所有音频流
-        options.autoSubscribeAudio = true
-        // 自动订阅所有视频流
-        options.autoSubscribeVideo = true
+        
+
+
         // 使用临时 Token 加入频道，在这里传入你的项目的 Token 和频道名
         // uid 为 0 表示由引擎内部随机生成; 成功后会触发 didJoinChannel 回调
         let result = agoraKit.joinChannel(byToken: token, channelId: roomid, uid: UInt(uid), mediaOptions: options)
@@ -108,6 +111,24 @@ class GMVideoRoomController: GMBaseViewController {
     @IBAction func JoinVideoRoom(_ sender: Any) {
         
         setupConfig(uid: patronIID, type: .Audience)
+    }
+    
+  
+    //观众连麦 参考:https://doc.shengwang.cn/doc/showroom/ios/basic-features/integrate-showroom#%E8%A7%82%E4%BC%97%E8%BF%9E%E9%BA%A6
+    @IBAction func AudienceConnection(_ sender: Any) {
+        //无论是主播邀请连麦,还是观众发起请求连麦,都是观众身份切换为主播身份,下麦后又重新切回观众身份
+//        agoraKit.setClientRole(.broadcaster)
+//        let options = AgoraRtcChannelMediaOptions()
+//        agoraKit.updateChannel(with: options)
+        print("开始连麦")
+    }
+    
+    
+    //观众下麦 下麦后又重新切回观众身份
+    @IBAction func AudienceDrinking(_ sender: Any) {
+        
+//        agoraKit.setClientRole(.audience)
+        print("下麦")
     }
 }
 
