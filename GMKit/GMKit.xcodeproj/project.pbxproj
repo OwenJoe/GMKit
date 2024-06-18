@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5ADCDBD42C1EE66100230E74 /* GMScrollChatChoseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADCDBD32C1EE66100230E74 /* GMScrollChatChoseController.swift */; };
 		5ADCDBD62C1EE86400230E74 /* GMScrollChatTwoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ADCDBD52C1EE86400230E74 /* GMScrollChatTwoController.swift */; };
+		ABA10D592C216072002F7E4F /* GMVoiceRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA10D572C216072002F7E4F /* GMVoiceRoomController.swift */; };
+		ABA10D5A2C216072002F7E4F /* GMVoiceRoomController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABA10D582C216072002F7E4F /* GMVoiceRoomController.xib */; };
 		ABEA07EB2C119DE4007803B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA07EA2C119DE4007803B0 /* AppDelegate.swift */; };
 		ABEA07F42C119DE5007803B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABEA07F32C119DE5007803B0 /* Assets.xcassets */; };
 		ABEA07F72C119DE5007803B0 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = ABEA07F62C119DE5007803B0 /* Base */; };
@@ -80,6 +82,8 @@
 		5ADCDBD52C1EE86400230E74 /* GMScrollChatTwoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMScrollChatTwoController.swift; sourceTree = "<group>"; };
 		71BA121CC1FD1657A548D1C4 /* Pods-GMKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GMKit.debug.xcconfig"; path = "Target Support Files/Pods-GMKit/Pods-GMKit.debug.xcconfig"; sourceTree = "<group>"; };
 		795769CB755CB6489F5FE451 /* Pods-GMKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GMKit.release.xcconfig"; path = "Target Support Files/Pods-GMKit/Pods-GMKit.release.xcconfig"; sourceTree = "<group>"; };
+		ABA10D572C216072002F7E4F /* GMVoiceRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMVoiceRoomController.swift; sourceTree = "<group>"; };
+		ABA10D582C216072002F7E4F /* GMVoiceRoomController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GMVoiceRoomController.xib; sourceTree = "<group>"; };
 		ABEA07E72C119DE4007803B0 /* GMKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GMKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABEA07EA2C119DE4007803B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABEA07F32C119DE5007803B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -176,6 +180,15 @@
 				795769CB755CB6489F5FE451 /* Pods-GMKit.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		ABA10D562C21406D002F7E4F /* 声网简单语聊房集成 */ = {
+			isa = PBXGroup;
+			children = (
+				ABA10D572C216072002F7E4F /* GMVoiceRoomController.swift */,
+				ABA10D582C216072002F7E4F /* GMVoiceRoomController.xib */,
+			);
+			path = "声网简单语聊房集成";
 			sourceTree = "<group>";
 		};
 		ABEA07DE2C119DE4007803B0 = {
@@ -446,6 +459,7 @@
 		ABEA08192C119E4F007803B0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				ABA10D562C21406D002F7E4F /* 声网简单语聊房集成 */,
 				ABF0A9802C2052BE0088A8DD /* 直播间礼物面板 */,
 				ABF0A97D2C204D060088A8DD /* 直播间顶部关注后自动伸缩 */,
 				ABF0A97C2C204CD30088A8DD /* 直播间左右切换清屏 */,
@@ -811,6 +825,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABEA088D2C11B96B007803B0 /* GMChatSendView.xib in Resources */,
+				ABA10D5A2C216072002F7E4F /* GMVoiceRoomController.xib in Resources */,
 				ABEA07F42C119DE5007803B0 /* Assets.xcassets in Resources */,
 				ABF0A9642C1C2D6A0088A8DD /* unselect.png in Resources */,
 				ABF0A92B2C1AD1DC0088A8DD /* GMScrollChatCell.xib in Resources */,
@@ -885,6 +900,7 @@
 				ABEA086F2C11AC7E007803B0 /* GMMineController.swift in Sources */,
 				ABEA082E2C11AB1B007803B0 /* GMButtonExt.swift in Sources */,
 				ABEA08512C11AB40007803B0 /* GMProgressHUD.swift in Sources */,
+				ABA10D592C216072002F7E4F /* GMVoiceRoomController.swift in Sources */,
 				ABEA08302C11AB1B007803B0 /* GMViewControllerExt.swift in Sources */,
 				ABF0A97F2C204E800088A8DD /* GMClearScreenController.swift in Sources */,
 				ABEA08362C11AB1B007803B0 /* GMViewExt.swift in Sources */,
@@ -1071,6 +1087,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XUR6JV97D3;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_PREFIX_HEADER = "";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1080,6 +1097,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1106,6 +1124,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XUR6JV97D3;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_PREFIX_HEADER = "";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1115,6 +1134,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

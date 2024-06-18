@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GMVoiceRoomController" customModule="GMKit" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CC9-LX-vbh">
+                    <rect key="frame" x="96.666666666666686" y="159" width="200" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Qap-pR-JtZ"/>
+                        <constraint firstAttribute="width" constant="200" id="jbA-7w-L7U"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="创建房间"/>
+                    <connections>
+                        <action selector="createVoiceRoom:" destination="-1" eventType="touchUpInside" id="e46-ID-FDs"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3f5-XP-yig">
+                    <rect key="frame" x="96.666666666666686" y="207" width="200" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Vn3-oT-XQS"/>
+                        <constraint firstAttribute="width" constant="200" id="qIR-ss-ZZ1"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="打开麦克风"/>
+                    <connections>
+                        <action selector="openMic:" destination="-1" eventType="touchUpInside" id="1xL-mq-1Xh"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zho-2n-lGO">
+                    <rect key="frame" x="96.666666666666686" y="255" width="200" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="4ed-xF-Xv9"/>
+                        <constraint firstAttribute="width" constant="200" id="83m-4v-HMj"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="关闭麦克风"/>
+                    <connections>
+                        <action selector="closeMic:" destination="-1" eventType="touchUpInside" id="aUa-8I-NhC"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="951-gE-HNy">
+                    <rect key="frame" x="96.666666666666686" y="303" width="200" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="kor-2i-TMA"/>
+                        <constraint firstAttribute="width" constant="200" id="l7U-vH-OYC"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="离开房间"/>
+                    <connections>
+                        <action selector="leaceRoom:" destination="-1" eventType="touchUpInside" id="BxF-nf-pAH"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geS-Hb-GKH">
+                    <rect key="frame" x="96.666666666666686" y="351" width="200" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="X06-Rz-o7t"/>
+                        <constraint firstAttribute="height" constant="40" id="mqG-Ve-Zm6"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="加入房间"/>
+                    <connections>
+                        <action selector="JoinRoom:" destination="-1" eventType="touchUpInside" id="v3f-9r-RRa"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="CC9-LX-vbh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0rm-zG-bae"/>
+                <constraint firstItem="3f5-XP-yig" firstAttribute="height" secondItem="CC9-LX-vbh" secondAttribute="height" id="20c-KP-dLr"/>
+                <constraint firstItem="CC9-LX-vbh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="4A2-jK-MMO"/>
+                <constraint firstItem="3f5-XP-yig" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="6UH-99-aa6"/>
+                <constraint firstItem="geS-Hb-GKH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7hE-qc-P37"/>
+                <constraint firstItem="951-gE-HNy" firstAttribute="width" secondItem="CC9-LX-vbh" secondAttribute="width" id="C2v-4L-Xea"/>
+                <constraint firstItem="geS-Hb-GKH" firstAttribute="top" secondItem="951-gE-HNy" secondAttribute="bottom" constant="8" id="D9n-8Z-KDA"/>
+                <constraint firstItem="3f5-XP-yig" firstAttribute="centerX" secondItem="CC9-LX-vbh" secondAttribute="centerX" id="ETk-lY-6hQ"/>
+                <constraint firstItem="geS-Hb-GKH" firstAttribute="width" secondItem="CC9-LX-vbh" secondAttribute="width" id="HWv-yf-zGj"/>
+                <constraint firstItem="3f5-XP-yig" firstAttribute="width" secondItem="CC9-LX-vbh" secondAttribute="width" id="KPo-93-TX7"/>
+                <constraint firstItem="3f5-XP-yig" firstAttribute="top" secondItem="CC9-LX-vbh" secondAttribute="bottom" constant="8" id="NvJ-Or-Ad7"/>
+                <constraint firstItem="951-gE-HNy" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="PjD-qu-qMw"/>
+                <constraint firstItem="951-gE-HNy" firstAttribute="centerX" secondItem="CC9-LX-vbh" secondAttribute="centerX" id="SGv-Bb-4lV"/>
+                <constraint firstItem="zho-2n-lGO" firstAttribute="top" secondItem="3f5-XP-yig" secondAttribute="bottom" constant="8" id="ahq-hM-1iN"/>
+                <constraint firstItem="zho-2n-lGO" firstAttribute="width" secondItem="CC9-LX-vbh" secondAttribute="width" id="cvI-Dh-GoG"/>
+                <constraint firstItem="zho-2n-lGO" firstAttribute="height" secondItem="CC9-LX-vbh" secondAttribute="height" id="ecZ-kR-DB2"/>
+                <constraint firstItem="951-gE-HNy" firstAttribute="top" secondItem="zho-2n-lGO" secondAttribute="bottom" constant="8" id="idg-er-tfx"/>
+                <constraint firstItem="zho-2n-lGO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jhj-GP-nza"/>
+                <constraint firstItem="geS-Hb-GKH" firstAttribute="centerX" secondItem="CC9-LX-vbh" secondAttribute="centerX" id="kKV-h9-IQO"/>
+                <constraint firstItem="geS-Hb-GKH" firstAttribute="height" secondItem="CC9-LX-vbh" secondAttribute="height" id="rlO-on-UlN"/>
+                <constraint firstItem="951-gE-HNy" firstAttribute="height" secondItem="CC9-LX-vbh" secondAttribute="height" id="vJd-Ld-OZa"/>
+                <constraint firstItem="zho-2n-lGO" firstAttribute="centerX" secondItem="CC9-LX-vbh" secondAttribute="centerX" id="vdw-xJ-O5T"/>
+            </constraints>
+            <point key="canvasLocation" x="31" y="-101"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -26,6 +26,9 @@ target 'GMKit' do
   #以下是新框架学习
   pod 'TTTAttributedLabel'
   
+  # 声网
+  pod 'AgoraRtcEngine_iOS'
+  
   #以下是看项目情况需要
   #pod 'NXNavigationExtension'   #使用上如果跟第三方控制器有冲突,着实不好处理
 end
