@@ -204,6 +204,13 @@
 			path = "声网简单直播集成";
 			sourceTree = "<group>";
 		};
+		ABA10DA62C22C5E1002F7E4F /* 声网主播PK */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "声网主播PK";
+			sourceTree = "<group>";
+		};
 		ABEA07DE2C119DE4007803B0 = {
 			isa = PBXGroup;
 			children = (
@@ -472,6 +479,7 @@
 		ABEA08192C119E4F007803B0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				ABA10DA62C22C5E1002F7E4F /* 声网主播PK */,
 				ABA10D7B2C217A44002F7E4F /* 声网简单直播集成 */,
 				ABA10D562C21406D002F7E4F /* 声网简单语聊房集成 */,
 				ABF0A9802C2052BE0088A8DD /* 直播间礼物面板 */,
