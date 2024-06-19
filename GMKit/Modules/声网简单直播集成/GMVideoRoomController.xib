@@ -88,7 +88,15 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="观众下麦"/>
                     <connections>
-                        <action selector="destroyVideo:" destination="-1" eventType="touchUpInside" id="4BK-MR-HZn"/>
+                        <action selector="AudienceDrinking:" destination="-1" eventType="touchUpInside" id="QIF-4v-9lk"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wG9-ZI-rCn">
+                    <rect key="frame" x="111" y="447" width="171" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="我是主播要PK连麦"/>
+                    <connections>
+                        <action selector="BroadcasterPK:" destination="-1" eventType="touchUpInside" id="p7b-O5-F5L"/>
                     </connections>
                 </button>
             </subviews>
@@ -96,6 +104,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="AAq-Uu-D9D" firstAttribute="width" secondItem="VsJ-IQ-L3J" secondAttribute="width" id="17d-Vn-Fb0"/>
+                <constraint firstItem="wG9-ZI-rCn" firstAttribute="top" secondItem="Ahs-GJ-N1t" secondAttribute="bottom" constant="8" id="1pX-wb-G0s"/>
                 <constraint firstItem="VsJ-IQ-L3J" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2w1-ql-DYE"/>
                 <constraint firstItem="lNR-P5-yvt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="3j6-aR-OSj"/>
                 <constraint firstItem="QjF-k4-Z8j" firstAttribute="width" secondItem="VsJ-IQ-L3J" secondAttribute="width" id="3qa-JD-EJM"/>
@@ -114,10 +123,11 @@
                 <constraint firstItem="dQv-Xm-ZLj" firstAttribute="centerX" secondItem="QjF-k4-Z8j" secondAttribute="centerX" id="j42-oh-YEY"/>
                 <constraint firstItem="lNR-P5-yvt" firstAttribute="centerX" secondItem="VsJ-IQ-L3J" secondAttribute="centerX" id="ogK-Zd-uJ0"/>
                 <constraint firstItem="AAq-Uu-D9D" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qvs-LW-FoC"/>
+                <constraint firstItem="wG9-ZI-rCn" firstAttribute="centerX" secondItem="Ahs-GJ-N1t" secondAttribute="centerX" id="rAn-bs-uSG"/>
                 <constraint firstItem="AAq-Uu-D9D" firstAttribute="centerX" secondItem="VsJ-IQ-L3J" secondAttribute="centerX" id="sca-7Y-fhE"/>
                 <constraint firstItem="Ahs-GJ-N1t" firstAttribute="top" secondItem="dQv-Xm-ZLj" secondAttribute="bottom" constant="8" id="ul0-lL-GOz"/>
             </constraints>
-            <point key="canvasLocation" x="-816" y="-33"/>
+            <point key="canvasLocation" x="-934" y="-168"/>
         </view>
     </objects>
     <resources>

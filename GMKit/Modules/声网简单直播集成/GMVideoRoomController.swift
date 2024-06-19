@@ -93,7 +93,6 @@ class GMVideoRoomController: GMBaseViewController {
             agoraKit.setupLocalVideo(videoCanvas)
             // 开始本地视频预览
             agoraKit.startPreview()
-//            agoraKit.setClientRole(.broadcaster, options: nil)
         }
         //观众
         else if type == .Audience {
@@ -101,7 +100,6 @@ class GMVideoRoomController: GMBaseViewController {
             agoraKit.setupLocalVideo(nil)
 //            let options = AgoraClientRoleOptions()
 //            options.audienceLatencyLevel = .ultraLowLatency
-//            agoraKit.setClientRole(.audience, options: options)
         }
 
         let option = AgoraRtcChannelMediaOptions()
@@ -112,7 +110,12 @@ class GMVideoRoomController: GMBaseViewController {
     }
 
 
-    
+    // ShowAgoraKitManager.swift
+    deinit {
+        AgoraRtcEngineKit.destroy()
+        print("deinit-- ShowAgoraKitManager")
+    }
+
     
     //销毁
     @IBAction func destroyVideo(_ sender: Any) {
@@ -155,6 +158,8 @@ class GMVideoRoomController: GMBaseViewController {
         // 设置用户角色为观众
         print("下麦")
     }
+
+    
 }
 
 
