@@ -76,8 +76,7 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="观众连麦"/>
                     <connections>
-                        <action selector="AudienceConnection:" destination="-1" eventType="touchUpInside" id="xWt-XA-N8o"/>
-                        <action selector="destroyVideo:" destination="-1" eventType="touchUpInside" id="WB2-ar-ZFe"/>
+                        <action selector="AudienceConnection:" destination="-1" eventType="touchUpInside" id="wts-oE-zUR"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ahs-GJ-N1t">
@@ -89,7 +88,6 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="观众下麦"/>
                     <connections>
-                        <action selector="AudienceDrinking:" destination="-1" eventType="touchUpInside" id="YzS-wU-Lhq"/>
                         <action selector="destroyVideo:" destination="-1" eventType="touchUpInside" id="4BK-MR-HZn"/>
                     </connections>
                 </button>

@@ -20,10 +20,10 @@ class GMVoiceRoomController: GMBaseViewController, UICollectionViewDelegate {
     var agoraKit : AgoraRtcEngineKit!
     //初始化 参数配置:https://console.shengwang.cn/overview?_gl=1*d0e3a8*_gcl_au*ODg0Njk3NjcwLjE3MTQxMjg3NTU.*_ga*MTA5OTcwMDE0NC4xNzE0MTI4NzIw*_ga_BFVGG7E02W*MTcxODY5MDg5NS4xNS4xLjE3MTg2OTEyNDMuMC4wLjA.
     let appid = "378f8206974d4010a6ae06fb2dff4b3f"
-    let token = "007eJxTYHjb2P152rEEg/ClE8+nTelq3ts1e6dpYNvDrPDEiQzCWe4KDMbmFmkWRgZmluYmKSYGhgaJZompBmZpSUYpaWkmScZp53QL0xoCGRkO7wpmYmSAQBCfi8HdNyw/MzkoPz+XgQEAYrUiVA=="  //24小时内鉴权key会失效 需要重新配置
+    let token = "007eJxTYBBavDri2GGvLeGslcr6itMi+F5M9HWTm89jtZ/9lt+xdEkFBmNzizQLIwMzS3OTFBMDQ4NEs8RUA7O0JKOUtDSTJOO0u+ZFaQ2BjAwPtfKZGRkgEMRnY3D3dUnNzWdgAACV5Bz4"  //24小时内鉴权key会失效 需要重新配置
     let masterUid = 123456789 //房主ID
     let patronIID = 000000000 //客人ID
-    let roomid = "GMVoicRoom"
+    let roomid = "GMDemo"
     var profile:AgoraChannelProfile = .liveBroadcasting
 
 
