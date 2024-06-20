@@ -51,7 +51,7 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="主播A邀请主播B PK"/>
                     <connections>
-                        <action selector="anchor_A_invite_B:" destination="-1" eventType="touchUpInside" id="NfT-fQ-yfL"/>
+                        <action selector="anchor_A_invite_B:" destination="-1" eventType="touchUpInside" id="ZER-cL-7Rp"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DnK-nV-PJs">
@@ -86,7 +86,7 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="主播B接受主播A PK"/>
                     <connections>
-                        <action selector="anchor_B_accept_A:" destination="-1" eventType="touchUpInside" id="wWC-RA-Yd1"/>
+                        <action selector="anchor_B_accept_A:" destination="-1" eventType="touchUpInside" id="ByE-0A-lEv"/>
                     </connections>
                 </button>
             </subviews>

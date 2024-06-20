@@ -3,7 +3,7 @@
 //  GMKit
 //
 //  Created by hule on 2024/6/20.
-//
+//  参考 https://doc.shengwang.cn/api-ref/rtc/ios/API/toc_channel#joinChannelExByToken%20[2/2]
 
 import UIKit
 
@@ -20,16 +20,22 @@ class GMPKRoomController: GMBaseViewController {
     let masterUid_B = UInt(11112222) //主播A
     let patronIID_A = UInt(888999666) //客人A
     let patronIID_B = UInt(020202020) //客人B
-    let roomid = "GMDemo"
     var profile:AgoraChannelProfile = .liveBroadcasting
     let appid = "378f8206974d4010a6ae06fb2dff4b3f"
-    let token = "007eJxTYIhiPL7sXNS9c/oiTD6+i6O26vktTdMoaKtqa7ujIRAZWKDAYGxukWZhZGBmaW6SYmJgaJBolphqYJaWZJSSlmaSZJzW+bA4rSGQkeHLpE4mRgYIBPHZGNx9XVJz8xkYAPAZHqI="  //24小时内鉴权key会失效 需要重新配置
+    let roomid_A = "GMPK_A"
+    let token_A = "007eJxTYBBS+BSu5i4yNaL4UXq0gnljFt+C74sO8TXJtcz4Ulj5MkyBwdjcIs3CyMDM0twkxcTA0CDRLDHVwCwtySglLc0kyTiN9UlxWkMgI8OFjnxmRgYIBPHZGNx9A7zjHRkYAO6dHj0="  //24小时内鉴权key会失效 需要重新配置
+    let userAccount_A = "AAAAAA"
+    let roomid_B = "GMPK_B"
+    let token_B = "007eJxTYKjR0LNYJ/XOl3O1h96aIxwyX87eFv22wZWT+d+1u0c1D8soMBibW6RZGBmYWZqbpJgYGBokmiWmGpilJRmlpKWZJBmnpT8pTmsIZGTwUbzJxMgAgSA+G4O7b4B3vBMDAwAx+B7d"  //24小时内鉴权key会失效 需要重新配置
+    let userAccount_B = "BBBBBB"
     // 本地视频视图
     var localView: UIView!
     // 远端视频视图
     var remoteView: UIView!
     // RTC 引擎
     var agoraKit: AgoraRtcEngineKit!
+    // PK 的另外一个窗口
+    var pkView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +47,15 @@ class GMPKRoomController: GMBaseViewController {
             frame: CGRect(x: self.view.bounds.width - 135, y: 50, width: 135, height: 240))
         self.view.insertSubview(localView, at: 0)
         self.view.addSubview(remoteView)
+        
+        pkView = UIView(frame: CGRectMake(200, ScreenHeight - 135, 135, 240))
+        pkView.backgroundColor = .orange
+        self.view.addSubview(pkView)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        AgoraRtcEngineKit.destroy() //销毁
     }
     
     //配置必要参数
@@ -70,6 +85,21 @@ class GMPKRoomController: GMBaseViewController {
         else {
             options.clientRoleType = .audience  // 设置用户角色为观众
         }
+        
+        var roomid: String {
+            if myUid == patronIID_A || myUid == masterUid_A {
+                return roomid_A
+            }
+            return roomid_B
+        }
+        
+        var token: String {
+            if myUid == patronIID_A || myUid == masterUid_A {
+                return roomid_A
+            }
+            return roomid_B
+        }
+        
         let result = agoraKit.joinChannel(byToken: token, channelId: roomid, uid: myUid, mediaOptions: options)
         if result != 0 {
             self.showAlert(title: "Error", message: "joinChannel call failed: \(result), please check your params")
@@ -117,6 +147,18 @@ class GMPKRoomController: GMBaseViewController {
     
     //主播A邀请主播B进行PK
     @IBAction func anchor_A_invite_B(_ sender: Any) {
+        
+        let channelOptions:AgoraRtcChannelMediaOptions = AgoraRtcChannelMediaOptions()
+        agoraKit.joinChannelEx(byToken: token_B, channelId: roomid_B, userAccount: userAccount_B, delegate: nil, mediaOptions: channelOptions) { str, oneInt, twoInt in
+            
+            
+            let videoCanvas = AgoraRtcVideoCanvas()
+            videoCanvas.uid = self.masterUid_B
+            videoCanvas.view = self.pkView
+            videoCanvas.renderMode = .hidden
+            self.agoraKit.setupRemoteVideo(videoCanvas)
+        }
+
     }
     
     //主播A离开PK
@@ -135,6 +177,17 @@ class GMPKRoomController: GMBaseViewController {
     
     //主播B接受主播A进行PK
     @IBAction func anchor_B_accept_A(_ sender: Any) {
+        
+        let channelOptions:AgoraRtcChannelMediaOptions = AgoraRtcChannelMediaOptions()
+        agoraKit.joinChannelEx(byToken: token_A, channelId: roomid_A, userAccount: userAccount_A, delegate: nil, mediaOptions: channelOptions) { str, oneInt, twoInt in
+            
+            
+            let videoCanvas = AgoraRtcVideoCanvas()
+            videoCanvas.uid = self.masterUid_A
+            videoCanvas.view = self.pkView
+            videoCanvas.renderMode = .hidden
+            self.agoraKit.setupRemoteVideo(videoCanvas)
+        }
     }
     
     //主播B离开PK
