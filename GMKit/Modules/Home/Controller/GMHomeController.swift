@@ -145,7 +145,8 @@ class GMHomeController: GMBaseViewController,UITableViewDelegate, UITableViewDat
 //          let vc  =  GMScrollChatChoseController()
 //          let vc  =  GMClearScreenController()
 //          let vc = GMVoiceRoomController()
-          let vc =  GMVideoRoomController()
+//          let vc =  GMVideoRoomController()
+          let vc = GMPKRoomController()
           self.navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -13,6 +13,8 @@
 		ABA10D5A2C216072002F7E4F /* GMVoiceRoomController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABA10D582C216072002F7E4F /* GMVoiceRoomController.xib */; };
 		ABA10D7E2C217A6F002F7E4F /* GMVideoRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA10D7C2C217A6F002F7E4F /* GMVideoRoomController.swift */; };
 		ABA10D7F2C217A6F002F7E4F /* GMVideoRoomController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABA10D7D2C217A6F002F7E4F /* GMVideoRoomController.xib */; };
+		ABA10DDE2C241489002F7E4F /* GMPKRoomController.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABA10DDD2C241489002F7E4F /* GMPKRoomController.xib */; };
+		ABA10DDF2C241489002F7E4F /* GMPKRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA10DDC2C241489002F7E4F /* GMPKRoomController.swift */; };
 		ABEA07EB2C119DE4007803B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEA07EA2C119DE4007803B0 /* AppDelegate.swift */; };
 		ABEA07F42C119DE5007803B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABEA07F32C119DE5007803B0 /* Assets.xcassets */; };
 		ABEA07F72C119DE5007803B0 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = ABEA07F62C119DE5007803B0 /* Base */; };
@@ -88,6 +90,8 @@
 		ABA10D582C216072002F7E4F /* GMVoiceRoomController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GMVoiceRoomController.xib; sourceTree = "<group>"; };
 		ABA10D7C2C217A6F002F7E4F /* GMVideoRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMVideoRoomController.swift; sourceTree = "<group>"; };
 		ABA10D7D2C217A6F002F7E4F /* GMVideoRoomController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GMVideoRoomController.xib; sourceTree = "<group>"; };
+		ABA10DDC2C241489002F7E4F /* GMPKRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMPKRoomController.swift; sourceTree = "<group>"; };
+		ABA10DDD2C241489002F7E4F /* GMPKRoomController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GMPKRoomController.xib; sourceTree = "<group>"; };
 		ABEA07E72C119DE4007803B0 /* GMKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GMKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABEA07EA2C119DE4007803B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABEA07F32C119DE5007803B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -207,6 +211,8 @@
 		ABA10DA62C22C5E1002F7E4F /* 声网主播PK */ = {
 			isa = PBXGroup;
 			children = (
+				ABA10DDC2C241489002F7E4F /* GMPKRoomController.swift */,
+				ABA10DDD2C241489002F7E4F /* GMPKRoomController.xib */,
 			);
 			path = "声网主播PK";
 			sourceTree = "<group>";
@@ -853,6 +859,7 @@
 				ABF0A9642C1C2D6A0088A8DD /* unselect.png in Resources */,
 				ABF0A92B2C1AD1DC0088A8DD /* GMScrollChatCell.xib in Resources */,
 				ABEA08922C11BCB4007803B0 /* GMHomeCell.xib in Resources */,
+				ABA10DDE2C241489002F7E4F /* GMPKRoomController.xib in Resources */,
 				ABF0A96C2C1C34050088A8DD /* tipvip.png in Resources */,
 				ABEA088B2C11B96B007803B0 /* GMChatCell.xib in Resources */,
 				ABF0A9632C1C2D6A0088A8DD /* select.png in Resources */,
@@ -958,6 +965,7 @@
 				ABEA08502C11AB40007803B0 /* GMAlertController.swift in Sources */,
 				ABEA08872C11B96B007803B0 /* GMChatController.swift in Sources */,
 				ABEA088C2C11B96B007803B0 /* GMChatSendView.swift in Sources */,
+				ABA10DDF2C241489002F7E4F /* GMPKRoomController.swift in Sources */,
 				ABEA085E2C11AB46007803B0 /* GMBaseTableView.swift in Sources */,
 				ABEA07EB2C119DE4007803B0 /* AppDelegate.swift in Sources */,
 				ABF0A9712C1FE9D40088A8DD /* GMChatTwoTableView.swift in Sources */,
